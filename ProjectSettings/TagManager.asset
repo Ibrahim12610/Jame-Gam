@@ -50,14 +50,14 @@ TagManager:
   - name: Floor
     uniqueID: 2569383749
     locked: 0
-  - name: Player
-    uniqueID: 778768485
-    locked: 0
   - name: Environment
     uniqueID: 4106563089
     locked: 0
   - name: Walls
     uniqueID: 2219909501
+    locked: 0
+  - name: Player
+    uniqueID: 778768485
     locked: 0
   m_RenderingLayers:
   - Default
