@@ -9,7 +9,7 @@ public class MainMenuController : MonoBehaviour
     {
         if (_hasClicked) return;
         _hasClicked = true;
-        SceneChangeManager.Instance.LoadNextStage("SampleScene");
+        SceneChangeManager.Instance.LoadNextStage("WorkShop1");
     }
 
     public void OnExitButtonClicked()
