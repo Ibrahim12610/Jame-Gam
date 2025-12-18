@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1479583106851835425}
   - component: {fileID: 2826183380597828990}
   - component: {fileID: 5060568397680917829}
+  - component: {fileID: 9088192208243975228}
   - component: {fileID: 3097240995751316218}
   - component: {fileID: 9051124269163791876}
   m_Layer: 0
@@ -135,6 +136,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   moveSpeed: 6
+--- !u!114 &9088192208243975228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1788788809763119454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23fffc9e9c964354ea16e3384d2df7e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerAnimator
 --- !u!95 &3097240995751316218
 Animator:
   serializedVersion: 7
