@@ -61,7 +61,7 @@ public class PlayerAnimator : MonoBehaviour
         }
 
         string animationState = GetAnimationState(isMoving, currentDirection);
-        Debug.Log("Current Animation: " + animationState);
+        
         _animator.Play(animationState);
     }
 
