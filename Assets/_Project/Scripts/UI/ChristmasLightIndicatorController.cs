@@ -1,5 +1,4 @@
 using System;
-using _Project.Scripts.Managers;
 using TMPro;
 using UnityEngine;
 
@@ -10,12 +9,16 @@ public class ChristmasLightIndicatorController : MonoBehaviour
     private void OnEnable()
     {
         ChristmasLightManager.OnChristmasLightsUpdated += HandleIndicatorChange;
-        HandleIndicatorChange();
     }
 
     private void OnDisable()
     {
-        ChristmasLightManager.OnChristmasLightsUpdated += HandleIndicatorChange;
+        ChristmasLightManager.OnChristmasLightsUpdated -= HandleIndicatorChange;
+    }
+
+    private void Start()
+    {
+        HandleIndicatorChange();
     }
 
     private void HandleIndicatorChange()

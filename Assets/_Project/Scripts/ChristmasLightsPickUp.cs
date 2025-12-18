@@ -1,5 +1,4 @@
 using System;
-using _Project.Scripts.Managers;
 using UnityEngine;
 
 public class ChristmasLightsPickUp : MonoBehaviour
