@@ -22,6 +22,8 @@ public class SceneChangeManager : MonoBehaviour
         _sceneFade = GetComponentInChildren<SceneFade>();
     }
 
+    public void RestartScene(string sceneToLoad) => LoadNextStage(sceneToLoad);
+
     public void LoadNextStage(string sceneToLoad)
     {
         StopAllCoroutines();
