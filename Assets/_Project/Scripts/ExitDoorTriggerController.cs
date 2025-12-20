@@ -5,6 +5,7 @@ public class ExitDoorTriggerController : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D otherCollider)
     {
+        PlayerManager.Instance.HandleDestroy();
         SceneChangeManager.Instance.LoadNextStage("Main Menu");
     }
     
