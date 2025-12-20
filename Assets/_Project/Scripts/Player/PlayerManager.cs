@@ -5,6 +5,7 @@ public class PlayerManager : MonoBehaviour
 {
     public static PlayerManager Instance;
 
+    public PlayerMovement movement;
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -14,6 +15,7 @@ public class PlayerManager : MonoBehaviour
         }
 
         Instance = this;
+        movement = GetComponent<PlayerMovement>();
     }
 
     public void SetPlayerTransform(Transform t)
