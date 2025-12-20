@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ExitDoorController
   exitDoor: {fileID: 668525595367967042}
+  waypoint: {fileID: 3298583630329013537}
 --- !u!1 &668525595367967042
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,6 +211,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WayPoint
       objectReference: {fileID: 0}
+    - target: {fileID: 3504711870248721055, guid: 347fc0eba738bd340b8460714a3e2dc2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4875035090115560467, guid: 347fc0eba738bd340b8460714a3e2dc2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.2326903
@@ -259,6 +264,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 347fc0eba738bd340b8460714a3e2dc2, type: 3}
+--- !u!1 &3298583630329013537 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3504711870248721055, guid: 347fc0eba738bd340b8460714a3e2dc2, type: 3}
+  m_PrefabInstance: {fileID: 2118328677063786430}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6828101488562142125 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4875035090115560467, guid: 347fc0eba738bd340b8460714a3e2dc2, type: 3}
