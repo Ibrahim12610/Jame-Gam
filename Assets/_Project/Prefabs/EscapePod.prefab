@@ -84,6 +84,37 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
   m_PresetInfoIsWorld: 1
+--- !u!1 &1045737683091893942
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2002670569457641289}
+  m_Layer: 0
+  m_Name: Vent2TPLocation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2002670569457641289
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1045737683091893942}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.05, y: -0.12, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5942263372915288218}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1175750910953398451
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,7 +322,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4180408209754346077
 Transform:
   m_ObjectHideFlags: 0
@@ -486,6 +517,37 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &3282506349492967591
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7756615099971542970}
+  m_Layer: 0
+  m_Name: Vent1TPLocation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7756615099971542970
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3282506349492967591}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.05, y: -0.09, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3963666793593635050}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3677543333292767080
 GameObject:
   m_ObjectHideFlags: 0
@@ -519,6 +581,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 748187248549748961}
+  - {fileID: 2002670569457641289}
   m_Father: {fileID: 2354736407897994476}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1841697989928783102
@@ -638,7 +701,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca622ce5117ca7d4ba1de4920a1734c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  otherVent: {fileID: 7268845571270715679}
+  otherVent: {fileID: 3282506349492967591}
   sliderGameObject: {fileID: 4211870909496208207}
   slider: {fileID: 2206359257154313365}
   ventingSpeed: 1
@@ -693,7 +756,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &748187248549748961
 Transform:
   m_ObjectHideFlags: 0
@@ -854,7 +917,7 @@ RectTransform:
   m_Father: {fileID: 7420400097238992640}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -924,11 +987,12 @@ Transform:
   m_GameObject: {fileID: 7268845571270715679}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.12, y: -0.01, z: 0}
+  m_LocalPosition: {x: -5.84, y: 1.42, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4180408209754346077}
+  - {fileID: 7756615099971542970}
   m_Father: {fileID: 2354736407897994476}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3290052182505738876
@@ -1048,7 +1112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca622ce5117ca7d4ba1de4920a1734c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  otherVent: {fileID: 3677543333292767080}
+  otherVent: {fileID: 1045737683091893942}
   sliderGameObject: {fileID: 2077897724511128809}
   slider: {fileID: 4599352135657225526}
   ventingSpeed: 1
@@ -1085,7 +1149,7 @@ RectTransform:
   m_Father: {fileID: 7004873241309026276}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
