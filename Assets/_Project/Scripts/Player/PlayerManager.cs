@@ -20,4 +20,9 @@ public class PlayerManager : MonoBehaviour
     {
         transform.position = t.position;
     }
+
+    public void HandleDestroy()
+    {
+        Destroy(gameObject);
+    }
 }

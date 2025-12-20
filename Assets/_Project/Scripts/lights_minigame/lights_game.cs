@@ -1,3 +1,4 @@
+
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -52,7 +53,7 @@ public class lights_game : MonoBehaviour
            
             if (currentPickup != null)
             {
-                ChristmasLightManager.Instance.OnChristmasLightCollected(pickupAmount);
+                MiniGameManager.Instance.OnMiniGameComplete(pickupAmount);
                 Destroy(currentPickup.gameObject);
                 currentPickup = null;
             }
