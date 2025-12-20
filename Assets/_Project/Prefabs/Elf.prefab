@@ -96,6 +96,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f642aee2801698b4ea19e6c66adfdcb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  arriveDistance: 0.2
+  patrolSection: {fileID: 0}
+  waitPerPatrolPoint: 1
 --- !u!1 &4858218620704972650
 GameObject:
   m_ObjectHideFlags: 0

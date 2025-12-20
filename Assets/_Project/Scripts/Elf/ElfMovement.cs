@@ -1,28 +1,103 @@
 using System;
-using NavMeshPlus.Extensions;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class ElfMovement : MonoBehaviour
 {
-    private Rigidbody2D rb;
-    private Transform player;
-    private NavMeshAgent agent;
+    [Header("Patrol Points")] 
+    private readonly List<Transform> _patrolPoints = new();
+    
+    [Header("Patrol Settings")]
+    [SerializeField] private float arriveDistance = 0.2f;
+    [SerializeField] private GameObject patrolSection;
+    [SerializeField] private float waitPerPatrolPoint = 0f;
+    
+    private Transform _player;
+    private NavMeshAgent _agent;
+    
+    private int _currentPatrolIndex;
+    private bool _isWaiting;
+    private float _waitTimer;
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
-        agent = GetComponent<NavMeshAgent>();
-        agent.updateRotation = false;
-        agent.updateUpAxis = false;
+        _agent = GetComponent<NavMeshAgent>();
+        _agent.updateRotation = false;
+        _agent.updateUpAxis = false;
+        
+        CachePatrolPoints();
+    }
+
+    private void CachePatrolPoints()
+    {
+        var patrolParent = patrolSection.transform;
+        
+        _patrolPoints.Clear();
+
+        for (int i = 0; i < patrolParent.childCount; i++)
+        {
+            _patrolPoints.Add(patrolParent.GetChild(i));
+        }
+    }
+
+    private void Start()
+    {
+        if (_patrolPoints.Count > 0)
+        {
+            SetNextPatrolPoint();
+        }
     }
 
     private void Update()
     {
-        if (!agent.enabled || !PlayerManager.Instance) return;
+        if (!_agent.enabled || _patrolPoints.Count == 0)
+            return;
+
+        HandlePatrolLogic();
+    }
+
+    private void HandlePatrolLogic()
+    {
+        if (_agent.pathPending)
+            return;
         
-        player = PlayerManager.Instance.transform;
+        if (!_isWaiting && _agent.remainingDistance <= arriveDistance)
+        {
+            if (waitPerPatrolPoint > 0f)
+            {
+                _isWaiting = true;
+                _waitTimer = waitPerPatrolPoint;
+                _agent.isStopped = true;
+            }
+            else
+            {
+                SetNextPatrolPoint();
+            }
+
+            return;
+        }
         
-        agent.SetDestination(player.position);
+        if (_isWaiting)
+        {
+            _waitTimer -= Time.deltaTime;
+
+            if (_waitTimer <= 0f)
+            {
+                _isWaiting = false;
+                _agent.isStopped = false;
+                SetNextPatrolPoint();
+            }
+        }
+    }
+    
+    private void SetNextPatrolPoint()
+    {
+        var target = _patrolPoints[_currentPatrolIndex];
+        _agent.SetDestination(target.position);
+        
+        _currentPatrolIndex++;
+        if (_currentPatrolIndex >= _patrolPoints.Count)
+            _currentPatrolIndex = 0;
     }
 }
