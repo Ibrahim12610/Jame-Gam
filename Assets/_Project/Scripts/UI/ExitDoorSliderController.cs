@@ -1,8 +1,7 @@
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ExitDoorTriggerController : MonoBehaviour
+public class ExitDoorSliderController : MonoBehaviour
 {
     [SerializeField] private GameObject sliderGameObject;
     [SerializeField] private Slider slider;
@@ -33,12 +32,6 @@ public class ExitDoorTriggerController : MonoBehaviour
         {
             _totalTime = 0f;
         }
-
-        if (_totalTime > 1f)
-        {
-            PlayerManager.Instance.HandleDestroy();
-            SceneChangeManager.Instance.LoadNextStage("EndSplashScreenScene");
-        }
         
     }
 
@@ -61,4 +54,5 @@ public class ExitDoorTriggerController : MonoBehaviour
     {
         slider.value = _totalTime;
     }
+
 }
