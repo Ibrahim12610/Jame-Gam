@@ -28,7 +28,7 @@ public class lights_game : MonoBehaviour
         currentPickup = null;
 
        
-        Time.timeScale = 0f;
+      
 
         active = true;
         safeIndex = Random.Range(0, lights.Length);
@@ -79,7 +79,6 @@ public class lights_game : MonoBehaviour
     void Close()
     {
        
-        Time.timeScale = 1f;
         minigameCanvas.SetActive(false);
     }
 
