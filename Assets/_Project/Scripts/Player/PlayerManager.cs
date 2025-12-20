@@ -25,4 +25,9 @@ public class PlayerManager : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
+    public Transform GetPlayerTransform()
+    {
+        return gameObject.transform;
+    }
 }
