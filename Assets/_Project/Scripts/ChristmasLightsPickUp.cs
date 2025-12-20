@@ -5,8 +5,11 @@ using UnityEngine.UI;
 public class ChristmasLightsPickUp : MonoBehaviour
 {
     public GameObject minigameCanvas;  
-    bool playerInside =false;  
+    bool playerInside = false;  
     [SerializeField] private int amount;
+
+    [SerializeField] private bool testMode;
+    
     private void OnTriggerEnter2D(Collider2D otherCollider)
     {
         
@@ -15,7 +18,12 @@ public class ChristmasLightsPickUp : MonoBehaviour
         if (playerInside) return;
 
         playerInside = true;
-        
+        if (testMode)
+        {
+            MiniGameManager.Instance.OnMiniGameComplete(1);
+            Destroy(gameObject);
+        }
+
         
         if (minigameCanvas != null)
         {
