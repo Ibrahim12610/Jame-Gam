@@ -3,10 +3,20 @@ using UnityEngine;
 
 public class ExitDoorController : MonoBehaviour
 {
-    private void OnTriggerEnter2D(Collider2D other)
+    public GameObject exitDoor;
+
+    private void OnEnable()
     {
-        //hold e to continue seqence
-        //send to main menu
-        SceneChangeManager.Instance.LoadNextStage("Main Menu");
+        EndGameManager.ActivateEndGameSequence += HandleDoorActivation;
+    }
+
+    private void OnDisable()
+    {
+        EndGameManager.ActivateEndGameSequence -= HandleDoorActivation;
+    }
+
+    private void HandleDoorActivation()
+    {
+        exitDoor.SetActive(true);
     }
 }

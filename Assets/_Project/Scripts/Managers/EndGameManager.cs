@@ -6,8 +6,6 @@ public class EndGameManager : MonoBehaviour
     public static EndGameManager Instance;
 
     public static event Action ActivateEndGameSequence;
-
-    public GameObject exit;
     
     private void Awake()
     {
@@ -33,7 +31,7 @@ public class EndGameManager : MonoBehaviour
     private void HandleEndGameActivation()
     {
         ActivateEndGameSequence?.Invoke();
-        exit.SetActive(true);
+        //activate waypoints
     }
     
 }
