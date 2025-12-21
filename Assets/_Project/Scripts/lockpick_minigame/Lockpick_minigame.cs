@@ -31,7 +31,7 @@ public class Lockpick_minigame : MonoBehaviour
             return;
         }
 
-        Time.timeScale = 0f;
+                                      
         canvas.SetActive(true);
 
         round = 0;
@@ -109,7 +109,7 @@ public class Lockpick_minigame : MonoBehaviour
     void Close()
     {
         active = false;
-        Time.timeScale = 1f;
+       
         canvas.SetActive(false);
     }
 

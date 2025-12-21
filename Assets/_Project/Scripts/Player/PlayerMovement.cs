@@ -5,14 +5,18 @@ public class PlayerMovement : MonoBehaviour
 {
     [Header("Settings")]
     [SerializeField] float moveSpeed;
+    [SerializeField] float crouchSpeedMultiplier = 0.5f; 
     
     private Vector2 lastMoveDirection = Vector2.down;
+    bool isCrouching = false;
+    float originalMoveSpeed;
     
     Rigidbody2D rb;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        originalMoveSpeed = moveSpeed; 
     }
     
     void Update()
@@ -31,8 +35,30 @@ public class PlayerMovement : MonoBehaviour
             moveVector += Vector2.right;
 
         moveVector.Normalize();
-        moveVector *= moveSpeed;
+        
+        float currentSpeed = isCrouching ? originalMoveSpeed * crouchSpeedMultiplier : originalMoveSpeed;
+        moveVector *= currentSpeed;
 
         rb.linearVelocity = moveVector;
+        
+        if (Input.GetKeyDown(KeyCode.LeftShift) )
+        {
+            if(isCrouching){
+                UnCrouch();
+            }
+            else{
+                Crouch();
+            }
+        }
+    }
+    
+    void Crouch()
+    {
+        isCrouching = true;
+    }
+    
+    void UnCrouch()
+    {
+        isCrouching = false;
     }
 }
