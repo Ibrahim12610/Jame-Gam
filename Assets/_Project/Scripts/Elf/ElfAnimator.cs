@@ -8,6 +8,7 @@ public class ElfAnimator : MonoBehaviour
     private SpriteRenderer _spriteRenderer;
     private Vector2 _lastMoveDirection = Vector2.down;
     private NavMeshAgent _agent;
+    private ElfMovement _movement;
     
     private const string State_idle_forward= "forward_idle";
     private const string State_idle_side= "side_idle";
@@ -21,34 +22,37 @@ public class ElfAnimator : MonoBehaviour
         _animator = GetComponent<Animator>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _agent = GetComponentInParent<NavMeshAgent>();
+        _movement = GetComponentInParent<ElfMovement>();
     }
     
     void Update()
     {
         Vector2 velocity = _agent.velocity;
-        UpdateAnimations(velocity);
+
+        Vector2 facingDirection =
+            (_movement != null && _movement.HasFacingOverride)
+                ? _movement.FacingOverride
+                : _agent.desiredVelocity;
+
+        UpdateAnimations(velocity, facingDirection);
     }
 
-    void UpdateAnimations(Vector2 moveVector)
+    void UpdateAnimations(Vector2 velocity, Vector2 desiredDirection)
     {
-        if (moveVector.magnitude > 0.1f)
-        {
-            _lastMoveDirection = moveVector.normalized;
-        }
+        bool isMoving = velocity.magnitude > 0.1f;
         
-        bool isMoving = moveVector.magnitude > 0.1f;
-        Vector2 currentDirection = isMoving ? moveVector.normalized : _lastMoveDirection;
+        if (desiredDirection.magnitude > 0.1f)
+            _lastMoveDirection = desiredDirection.normalized;
+
+        Vector2 facingDirection = _lastMoveDirection;
         
         if (_spriteRenderer != null)
         {
-            float absX = Mathf.Abs(currentDirection.x);
-            float absY = Mathf.Abs(currentDirection.y);
-            
-            if (absX > absY)
-                _spriteRenderer.flipX = currentDirection.x < 0;
+            if (Mathf.Abs(facingDirection.x) > Mathf.Abs(facingDirection.y))
+                _spriteRenderer.flipX = facingDirection.x < 0;
         }
 
-        string animationState = GetAnimationState(isMoving, currentDirection);
+        string animationState = GetAnimationState(isMoving, facingDirection);
         _animator.Play(animationState);
     }
 

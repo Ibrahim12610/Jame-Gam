@@ -12,18 +12,25 @@ public class ElfMovement : MonoBehaviour
     [SerializeField] private float arriveDistance = 0.2f;
     [SerializeField] private GameObject patrolSection;
     [SerializeField] private float waitPerPatrolPoint = 0f;
+    [SerializeField] private AudioClip notifySound;
     
     private Transform _player;
     private NavMeshAgent _agent;
+    private AudioSource _audioSource;
     
     private int _currentPatrolIndex;
     private bool _isWaiting;
     private float _waitTimer;
     private bool _isPaused;
+    private bool _playNotifySound = true;
+    
+    public Vector2 FacingOverride { get; private set; }
+    public bool HasFacingOverride { get; private set; }
 
     private void Awake()
     {
         _agent = GetComponent<NavMeshAgent>();
+        _audioSource = GetComponent<AudioSource>();
         _agent.updateRotation = false;
         _agent.updateUpAxis = false;
         _agent.autoRepath = false;
@@ -67,7 +74,7 @@ public class ElfMovement : MonoBehaviour
     {
         if (!_agent.enabled || _patrolPoints.Count == 0)
             return;
-        
+
         if (!_agent.isOnNavMesh)
         {
             Debug.LogWarning("Attempting to return to navmesh");
@@ -77,11 +84,40 @@ public class ElfMovement : MonoBehaviour
 
         if (_isPaused)
         {
-            Debug.Log("Attempting to head towards player");
-            _agent.SetDestination(PlayerManager.Instance.GetPlayerTransform().position);
+            UpdateFacingTowardsPlayer();
+            if (_playNotifySound)
+            {
+                _playNotifySound = false;
+                _audioSource.clip = notifySound;
+                _audioSource.loop = true;
+                _audioSource.Play();
+            }
+            
+            return;
         }
 
+        _playNotifySound = true;
+        _audioSource.Stop();
+        HasFacingOverride = false;
         HandlePatrolLogic();
+    }
+    
+    private void UpdateFacingTowardsPlayer()
+    {
+        Transform player = PlayerManager.Instance.GetPlayerTransform();
+        if (player == null)
+            return;
+
+        Vector2 directionToPlayer =
+            (player.position - transform.position);
+
+        if (directionToPlayer.sqrMagnitude < 0.001f)
+            return;
+
+        FacingOverride = directionToPlayer.normalized;
+        HasFacingOverride = true;
+
+        _agent.velocity = Vector3.zero;
     }
 
     private void HandlePatrolLogic()

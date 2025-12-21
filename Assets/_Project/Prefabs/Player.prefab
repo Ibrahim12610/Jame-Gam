@@ -278,6 +278,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   moveSpeed: 6
+  crouchSpeedMultiplier: 0.5
 --- !u!114 &9088192208243975228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -741,5 +742,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a5f3b8f98c87674190881753af51920, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  damageAmount: 5
+  damageAmount: 34
   impulseSource: {fileID: 790151368263913613}
