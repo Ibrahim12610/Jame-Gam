@@ -20,13 +20,14 @@ public class PlayerAttackController : MonoBehaviour
     private AudioSource _audioSource;
     private Vector2 _moveInput;
     private Vector2 _facingDirection = Vector2.down;
-    
+    private PlayerAnimator _playerAnimator;
     
     private void Awake()
     {
         attackPoint.SetActive(false);
         _directionalCollider = attackPoint.GetComponent<CircleCollider2D>();
         _audioSource = GetComponent<AudioSource>();
+        _playerAnimator = GetComponentInParent<PlayerAnimator>();
     }
 
     private void Update()
@@ -36,6 +37,7 @@ public class PlayerAttackController : MonoBehaviour
             StopAllCoroutines();
             isAttacking = true;
             _audioSource.PlayOneShot(attackSound);
+            _playerAnimator.TriggerAttack();
             StartCoroutine(HandleAttackPointActivation());
         }
 
