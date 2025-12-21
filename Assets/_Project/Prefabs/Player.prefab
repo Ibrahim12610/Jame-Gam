@@ -135,7 +135,7 @@ MonoBehaviour:
   impulseCollider: {fileID: 842039378156815130}
   colliderOffsetDistance: 0.4
   damageDelay: 0
-  attackDuration: 0.3
+  attackDuration: 0.5
   attackSound: {fileID: 8300000, guid: c797bcd7595577242868d761296e9af7, type: 3}
   isAttacking: 0
 --- !u!82 &3338129867325980705
@@ -249,10 +249,10 @@ GameObject:
   - component: {fileID: 5060568397680917829}
   - component: {fileID: 9088192208243975228}
   - component: {fileID: 3097240995751316218}
-  - component: {fileID: 9051124269163791876}
   - component: {fileID: 5906181796364292569}
   - component: {fileID: 8495101181358013102}
   - component: {fileID: 3208954812301413250}
+  - component: {fileID: 4714970608268374135}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -323,20 +323,20 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 778768485
-  m_SortingLayer: 6
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -383917467516077829, guid: 2d237c44962964f73ac389b44cd4751b, type: 3}
+  m_Sprite: {fileID: -1875376109804968009, guid: 41a19276335d37f438305b68c9c52b58, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2, y: 2}
+  m_Size: {x: 3, y: 3}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!50 &2826183380597828990
 Rigidbody2D:
   serializedVersion: 5
@@ -376,8 +376,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a9ef3faafd8174e97f26203c4d0bd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  moveSpeed: 6
+  moveSpeed: 4
   crouchSpeedMultiplier: 0.5
+  isCrouching: 0
 --- !u!114 &9088192208243975228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -390,7 +391,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23fffc9e9c964354ea16e3384d2df7e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAnimator
-  attackDuration: 0.35
+  attackDuration: 0.5
 --- !u!95 &3097240995751316218
 Animator:
   serializedVersion: 7
@@ -413,42 +414,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!58 &9051124269163791876
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1788788809763119454}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.31421614}
-  m_Radius: 0.68578386
 --- !u!114 &5906181796364292569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -578,6 +543,52 @@ MonoBehaviour:
   _impulseResistance: 0
   _impulseParticlePrefab: {fileID: 0}
   _impulseSound: {fileID: 0}
+--- !u!61 &4714970608268374135
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1788788809763119454}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0.11578238}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.1875}
+    oldSize: {x: 3, y: 3}
+    newSize: {x: 3, y: 3}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1.1635851, y: 0.33368564}
+  m_EdgeRadius: 0
 --- !u!1 &4033428941179096859
 GameObject:
   m_ObjectHideFlags: 0
@@ -738,9 +749,9 @@ MonoBehaviour:
   m_NormalMapQuality: 2
   m_UseNormalMap: 0
   m_ShadowsEnabled: 1
-  m_ShadowIntensity: 0.75
+  m_ShadowIntensity: 1
   m_ShadowSoftness: 0.3
-  m_ShadowSoftnessFalloffIntensity: 0.5
+  m_ShadowSoftnessFalloffIntensity: 0.3
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:

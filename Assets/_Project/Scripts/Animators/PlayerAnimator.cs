@@ -6,27 +6,39 @@ public class PlayerAnimator : MonoBehaviour
     private Animator _animator;
     private SpriteRenderer _spriteRenderer;
     private Vector2 _lastMoveDirection = Vector2.down;
-    
+    private PlayerMovement _playerMovement;
+    private bool _isCrouching;
+
     [SerializeField] private float attackDuration = 0.35f;
 
     private bool _isAttacking;
     private float _attackTimer;
-    
-    private const string State_idle_forward= "forward_idle";
-    private const string State_idle_side= "side_idle";
-    private const string State_idle_back= "back_idle";
-    private const string State_walk_forward= "forward_walk";
-    private const string State_walk_side= "side_walk";
+
+    private const string State_idle_forward = "forward_idle";
+    private const string State_idle_side = "side_idle";
+    private const string State_idle_back = "back_idle";
+    private const string State_walk_forward = "forward_walk";
+    private const string State_walk_side = "side_walk";
     private const string State_walk_back = "walk_back";
-    
+
     private const string State_attack_forward = "forward_attack";
-    private const string State_attack_side    = "side_attack";
-    private const string State_attack_back    = "back_attack";
-    
+    private const string State_attack_side = "side_attack";
+    private const string State_attack_back = "back_attack";
+
+    private const string State_crouch_back = "crouch_back";
+    private const string State_crouch_front = "crouch_front";
+    private const string State_crouch_side = "crouch_side";
+    private const string State_crouch_side_walk = "crouch_side_walk";
+    private const string State_crouch_front_walk = "crouch_front_walk";
+    private const string State_crouch_back_walk = "crouch_back_walk";
+
     private void Awake()
     {
         _animator = GetComponent<Animator>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        _playerMovement = GetComponent<PlayerMovement>();
+        _isCrouching = _playerMovement.isCrouching;
+
     }
     void Update()
     {
@@ -43,7 +55,7 @@ public class PlayerAnimator : MonoBehaviour
         UpdateAttackTimer();
         UpdateAnimations(moveVector);
     }
-    
+
     public void TriggerAttack(Vector2? forcedDirection = null)
     {
         if (_isAttacking) return;
@@ -56,7 +68,7 @@ public class PlayerAnimator : MonoBehaviour
             _lastMoveDirection = forcedDirection.Value.normalized;
         }
     }
-    
+
     void StartAttack()
     {
         _isAttacking = true;
@@ -80,7 +92,6 @@ public class PlayerAnimator : MonoBehaviour
         {
             _lastMoveDirection = moveVector.normalized;
         }
-
         Vector2 direction = _isAttacking
             ? _lastMoveDirection
             : (moveVector.magnitude > 0.1f ? moveVector.normalized : _lastMoveDirection);
@@ -93,29 +104,54 @@ public class PlayerAnimator : MonoBehaviour
 
         _animator.Play(state);
     }
-    
+
     string GetMovementState(bool isMoving, Vector2 direction)
     {
         float absX = Mathf.Abs(direction.x);
         float absY = Mathf.Abs(direction.y);
+        bool isCrouching = _playerMovement.isCrouching;
 
-        if (absY > absX)
+        if (!isCrouching)
         {
-            // Vertical
-            if (direction.y < 0)
+            if (absY > absX)
             {
-                return isMoving ? State_walk_forward : State_idle_forward;
+                // Vertical
+                if (direction.y < 0)
+                {
+                    return isMoving ? State_walk_forward : State_idle_forward;
+                }
+                else
+                {
+                    return isMoving ? State_walk_back : State_idle_back;
+                }
             }
             else
             {
-                return isMoving ? State_walk_back : State_idle_back;
+                // Horizontal
+                return isMoving ? State_walk_side : State_idle_side;
             }
         }
         else
         {
-            // Horizontal
-            return isMoving ? State_walk_side : State_idle_side;
+            if (absY > absX)
+            {
+                // Vertical
+                if (direction.y < 0)
+                {
+                    return isMoving ? State_crouch_front_walk : State_crouch_front;
+                }
+                else
+                {
+                    return isMoving ? State_crouch_back_walk : State_crouch_back;
+                }
+            }
+            else
+            {
+                // Horizontal
+                return isMoving ? State_crouch_side_walk : State_crouch_side;
+            }
         }
+
     }
 
     string GetAttackState(Vector2 direction)
@@ -132,14 +168,14 @@ public class PlayerAnimator : MonoBehaviour
 
         return State_attack_side;
     }
-    
+
     void UpdateSpriteFlip(Vector2 direction)
     {
         if (_spriteRenderer == null) return;
 
-        if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
-        {
-            _spriteRenderer.flipX = direction.x < 0;
-        }
+        // if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
+        // {
+        _spriteRenderer.flipX = direction.x < 0;
+        // }
     }
 }

@@ -290,12 +290,12 @@ TextureImporter:
       name: NEWTheGrinchChibi_0
       rect:
         serializedVersion: 2
-        x: 17
-        y: 250
-        width: 14
-        height: 24
+        x: 0
+        y: 240
+        width: 48
+        height: 48
       alignment: 9
-      pivot: {x: 0.5, y: 0.05}
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -312,12 +312,12 @@ TextureImporter:
       name: NEWTheGrinchChibi_1
       rect:
         serializedVersion: 2
-        x: 62
-        y: 250
-        width: 20
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 48
+        y: 240
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -334,12 +334,12 @@ TextureImporter:
       name: NEWTheGrinchChibi_2
       rect:
         serializedVersion: 2
-        x: 109
-        y: 248
-        width: 24
-        height: 31
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 96
+        y: 240
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -356,12 +356,12 @@ TextureImporter:
       name: NEWTheGrinchChibi_3
       rect:
         serializedVersion: 2
-        x: 157
-        y: 248
-        width: 24
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 144
+        y: 240
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -378,12 +378,12 @@ TextureImporter:
       name: NEWTheGrinchChibi_4
       rect:
         serializedVersion: 2
-        x: 205
-        y: 248
-        width: 24
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 192
+        y: 240
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -400,12 +400,12 @@ TextureImporter:
       name: NEWTheGrinchChibi_5
       rect:
         serializedVersion: 2
-        x: 253
-        y: 248
-        width: 24
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 240
+        y: 240
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -422,12 +422,12 @@ TextureImporter:
       name: NEWTheGrinchChibi_6
       rect:
         serializedVersion: 2
-        x: 301
-        y: 248
-        width: 24
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 288
+        y: 240
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -444,12 +444,12 @@ TextureImporter:
       name: NEWTheGrinchChibi_7
       rect:
         serializedVersion: 2
-        x: 349
-        y: 248
-        width: 24
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 336
+        y: 240
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -466,12 +466,12 @@ TextureImporter:
       name: NEWTheGrinchChibi_8
       rect:
         serializedVersion: 2
-        x: 397
-        y: 248
-        width: 24
-        height: 31
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 384
+        y: 240
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -488,12 +488,12 @@ TextureImporter:
       name: NEWTheGrinchChibi_9
       rect:
         serializedVersion: 2
-        x: 444
-        y: 248
-        width: 25
-        height: 31
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 432
+        y: 240
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -510,12 +510,12 @@ TextureImporter:
       name: NEWTheGrinchChibi_10
       rect:
         serializedVersion: 2
-        x: 13
-        y: 199
-        width: 24
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 0
+        y: 192
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -532,12 +532,12 @@ TextureImporter:
       name: NEWTheGrinchChibi_11
       rect:
         serializedVersion: 2
-        x: 61
-        y: 196
-        width: 24
-        height: 35
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 48
+        y: 192
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -554,12 +554,12 @@ TextureImporter:
       name: NEWTheGrinchChibi_12
       rect:
         serializedVersion: 2
-        x: 109
-        y: 197
-        width: 24
-        height: 34
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 96
+        y: 192
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -576,12 +576,12 @@ TextureImporter:
       name: NEWTheGrinchChibi_13
       rect:
         serializedVersion: 2
-        x: 157
-        y: 200
-        width: 24
-        height: 31
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 144
+        y: 192
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -598,12 +598,12 @@ TextureImporter:
       name: NEWTheGrinchChibi_14
       rect:
         serializedVersion: 2
-        x: 205
-        y: 200
-        width: 24
-        height: 31
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 192
+        y: 192
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -620,12 +620,12 @@ TextureImporter:
       name: NEWTheGrinchChibi_15
       rect:
         serializedVersion: 2
-        x: 253
-        y: 200
-        width: 24
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 240
+        y: 192
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -642,12 +642,12 @@ TextureImporter:
       name: NEWTheGrinchChibi_16
       rect:
         serializedVersion: 2
-        x: 301
-        y: 200
-        width: 24
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 288
+        y: 192
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -664,12 +664,12 @@ TextureImporter:
       name: NEWTheGrinchChibi_17
       rect:
         serializedVersion: 2
-        x: 349
-        y: 200
-        width: 24
-        height: 31
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 336
+        y: 192
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -686,12 +686,12 @@ TextureImporter:
       name: NEWTheGrinchChibi_18
       rect:
         serializedVersion: 2
-        x: 397
-        y: 200
-        width: 24
-        height: 31
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 384
+        y: 192
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -708,12 +708,12 @@ TextureImporter:
       name: NEWTheGrinchChibi_19
       rect:
         serializedVersion: 2
-        x: 445
-        y: 200
-        width: 24
-        height: 31
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 432
+        y: 192
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -730,12 +730,12 @@ TextureImporter:
       name: NEWTheGrinchChibi_20
       rect:
         serializedVersion: 2
-        x: 13
-        y: 152
-        width: 24
-        height: 31
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 0
+        y: 144
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -752,12 +752,12 @@ TextureImporter:
       name: NEWTheGrinchChibi_21
       rect:
         serializedVersion: 2
-        x: 61
-        y: 152
-        width: 22
-        height: 29
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 48
+        y: 144
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -774,12 +774,12 @@ TextureImporter:
       name: NEWTheGrinchChibi_22
       rect:
         serializedVersion: 2
-        x: 109
-        y: 152
-        width: 22
-        height: 25
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 96
+        y: 144
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -796,12 +796,12 @@ TextureImporter:
       name: NEWTheGrinchChibi_23
       rect:
         serializedVersion: 2
-        x: 157
-        y: 152
-        width: 22
-        height: 25
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 144
+        y: 144
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -818,12 +818,12 @@ TextureImporter:
       name: NEWTheGrinchChibi_24
       rect:
         serializedVersion: 2
-        x: 205
-        y: 152
-        width: 22
-        height: 25
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 192
+        y: 144
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -840,12 +840,12 @@ TextureImporter:
       name: NEWTheGrinchChibi_25
       rect:
         serializedVersion: 2
-        x: 253
-        y: 152
-        width: 22
-        height: 25
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 240
+        y: 144
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -862,12 +862,12 @@ TextureImporter:
       name: NEWTheGrinchChibi_26
       rect:
         serializedVersion: 2
-        x: 301
-        y: 152
-        width: 22
-        height: 25
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 288
+        y: 144
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -884,12 +884,12 @@ TextureImporter:
       name: NEWTheGrinchChibi_27
       rect:
         serializedVersion: 2
-        x: 349
-        y: 152
-        width: 22
-        height: 29
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 336
+        y: 144
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -906,12 +906,12 @@ TextureImporter:
       name: NEWTheGrinchChibi_28
       rect:
         serializedVersion: 2
-        x: 396
-        y: 152
-        width: 24
-        height: 29
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 384
+        y: 144
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -928,12 +928,12 @@ TextureImporter:
       name: NEWTheGrinchChibi_29
       rect:
         serializedVersion: 2
-        x: 445
-        y: 152
-        width: 23
-        height: 29
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 432
+        y: 144
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -950,12 +950,12 @@ TextureImporter:
       name: NEWTheGrinchChibi_30
       rect:
         serializedVersion: 2
-        x: 13
-        y: 104
-        width: 23
-        height: 29
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 0
+        y: 96
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -972,12 +972,12 @@ TextureImporter:
       name: NEWTheGrinchChibi_31
       rect:
         serializedVersion: 2
-        x: 61
-        y: 104
-        width: 23
-        height: 29
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 48
+        y: 96
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -994,12 +994,12 @@ TextureImporter:
       name: NEWTheGrinchChibi_32
       rect:
         serializedVersion: 2
-        x: 109
-        y: 104
-        width: 22
-        height: 29
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 96
+        y: 96
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1016,12 +1016,12 @@ TextureImporter:
       name: NEWTheGrinchChibi_33
       rect:
         serializedVersion: 2
-        x: 157
-        y: 104
-        width: 22
-        height: 29
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 144
+        y: 96
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1038,12 +1038,12 @@ TextureImporter:
       name: NEWTheGrinchChibi_34
       rect:
         serializedVersion: 2
-        x: 205
-        y: 104
-        width: 22
-        height: 30
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 192
+        y: 96
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1060,12 +1060,12 @@ TextureImporter:
       name: NEWTheGrinchChibi_35
       rect:
         serializedVersion: 2
-        x: 253
-        y: 104
-        width: 22
-        height: 30
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 240
+        y: 96
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1082,12 +1082,12 @@ TextureImporter:
       name: NEWTheGrinchChibi_36
       rect:
         serializedVersion: 2
-        x: 301
-        y: 104
-        width: 22
-        height: 29
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 288
+        y: 96
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1104,12 +1104,12 @@ TextureImporter:
       name: NEWTheGrinchChibi_37
       rect:
         serializedVersion: 2
-        x: 349
-        y: 104
-        width: 22
-        height: 29
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 336
+        y: 96
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1126,12 +1126,12 @@ TextureImporter:
       name: NEWTheGrinchChibi_38
       rect:
         serializedVersion: 2
-        x: 397
-        y: 104
-        width: 22
-        height: 29
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 384
+        y: 96
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1148,12 +1148,12 @@ TextureImporter:
       name: NEWTheGrinchChibi_39
       rect:
         serializedVersion: 2
-        x: 445
-        y: 104
-        width: 22
-        height: 29
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 432
+        y: 96
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1170,12 +1170,12 @@ TextureImporter:
       name: NEWTheGrinchChibi_40
       rect:
         serializedVersion: 2
-        x: 12
-        y: 56
-        width: 22
-        height: 29
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 0
+        y: 48
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1192,12 +1192,12 @@ TextureImporter:
       name: NEWTheGrinchChibi_41
       rect:
         serializedVersion: 2
-        x: 60
-        y: 56
-        width: 22
-        height: 25
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 48
+        y: 48
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1214,12 +1214,12 @@ TextureImporter:
       name: NEWTheGrinchChibi_42
       rect:
         serializedVersion: 2
-        x: 108
-        y: 56
-        width: 22
-        height: 25
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 96
+        y: 48
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1236,12 +1236,12 @@ TextureImporter:
       name: NEWTheGrinchChibi_43
       rect:
         serializedVersion: 2
-        x: 156
-        y: 56
-        width: 22
-        height: 25
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 144
+        y: 48
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1258,12 +1258,12 @@ TextureImporter:
       name: NEWTheGrinchChibi_44
       rect:
         serializedVersion: 2
-        x: 204
-        y: 56
-        width: 22
-        height: 25
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 192
+        y: 48
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1280,12 +1280,12 @@ TextureImporter:
       name: NEWTheGrinchChibi_45
       rect:
         serializedVersion: 2
-        x: 252
-        y: 56
-        width: 22
-        height: 29
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 240
+        y: 48
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1302,12 +1302,12 @@ TextureImporter:
       name: NEWTheGrinchChibi_46
       rect:
         serializedVersion: 2
-        x: 300
-        y: 56
-        width: 22
-        height: 29
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 288
+        y: 48
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1324,12 +1324,12 @@ TextureImporter:
       name: NEWTheGrinchChibi_47
       rect:
         serializedVersion: 2
-        x: 348
-        y: 56
-        width: 24
-        height: 29
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 336
+        y: 48
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1346,12 +1346,12 @@ TextureImporter:
       name: NEWTheGrinchChibi_48
       rect:
         serializedVersion: 2
-        x: 396
-        y: 56
-        width: 26
-        height: 29
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 384
+        y: 48
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1368,12 +1368,12 @@ TextureImporter:
       name: NEWTheGrinchChibi_49
       rect:
         serializedVersion: 2
-        x: 444
-        y: 56
-        width: 27
-        height: 29
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 432
+        y: 48
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1390,12 +1390,12 @@ TextureImporter:
       name: NEWTheGrinchChibi_51
       rect:
         serializedVersion: 2
-        x: 12
-        y: 8
-        width: 22
-        height: 29
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 48
+        y: 0
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1412,12 +1412,12 @@ TextureImporter:
       name: NEWTheGrinchChibi_52
       rect:
         serializedVersion: 2
-        x: 60
-        y: 8
-        width: 22
-        height: 29
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 96
+        y: 0
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1434,12 +1434,12 @@ TextureImporter:
       name: NEWTheGrinchChibi_53
       rect:
         serializedVersion: 2
-        x: 108
-        y: 8
-        width: 22
-        height: 30
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 144
+        y: 0
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1456,12 +1456,12 @@ TextureImporter:
       name: NEWTheGrinchChibi_54
       rect:
         serializedVersion: 2
-        x: 156
-        y: 8
-        width: 22
-        height: 30
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 192
+        y: 0
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1478,12 +1478,12 @@ TextureImporter:
       name: NEWTheGrinchChibi_55
       rect:
         serializedVersion: 2
-        x: 204
-        y: 8
-        width: 22
-        height: 29
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 240
+        y: 0
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1500,12 +1500,12 @@ TextureImporter:
       name: NEWTheGrinchChibi_56
       rect:
         serializedVersion: 2
-        x: 252
-        y: 8
-        width: 22
-        height: 29
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 288
+        y: 0
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1522,12 +1522,12 @@ TextureImporter:
       name: NEWTheGrinchChibi_57
       rect:
         serializedVersion: 2
-        x: 300
-        y: 8
-        width: 22
-        height: 29
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 336
+        y: 0
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1541,23 +1541,23 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NEWTheGrinchChibi_58
+      name: NEWTheGrinchChibi_50
       rect:
         serializedVersion: 2
-        x: 348
-        y: 8
-        width: 22
-        height: 29
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 0
+        y: 0
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 6a39d8461d3870b70800000000000000
-      internalID: 8865199326860514214
+      spriteID: 25e6de1424f5a47809030f74bf11bb99
+      internalID: -1166059462971136304
       vertices: []
       indices: 
       edges: []
@@ -1574,7 +1574,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":48.0,"y":48.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.1875},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":9,"pivotUnitMode":1,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       NEWTheGrinchChibi_0: 7346377270301486819
       NEWTheGrinchChibi_1: -8052194532346300283
@@ -1630,7 +1632,6 @@ TextureImporter:
       NEWTheGrinchChibi_55: -1731309533189453626
       NEWTheGrinchChibi_56: 6365425499413599580
       NEWTheGrinchChibi_57: 2721647870565334243
-      NEWTheGrinchChibi_58: 8865199326860514214
       NEWTheGrinchChibi_6: -3291937539339382851
       NEWTheGrinchChibi_7: -7540025605624989388
       NEWTheGrinchChibi_8: 3782427081551579050

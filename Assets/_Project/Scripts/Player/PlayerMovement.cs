@@ -4,27 +4,27 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Settings")]
-    [SerializeField] float moveSpeed;
-    [SerializeField] float crouchSpeedMultiplier = 0.5f; 
-    
+    [SerializeField] public float moveSpeed;
+    [SerializeField] float crouchSpeedMultiplier = 0.5f;
+
     private Vector2 lastMoveDirection = Vector2.down;
-    bool isCrouching = false;
+    public bool isCrouching = false;
     float originalMoveSpeed;
-    
+
     Rigidbody2D rb;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        originalMoveSpeed = moveSpeed; 
+        originalMoveSpeed = moveSpeed;
     }
-    
+
     void Update()
     {
         Vector2 moveVector = Vector2.zero;
 
         if (PlayerManager.Instance.IsInImpulse()) return;
-        
+
         if (Input.GetKey(KeyCode.W))
             moveVector += Vector2.up;
         if (Input.GetKey(KeyCode.A))
@@ -35,28 +35,30 @@ public class PlayerMovement : MonoBehaviour
             moveVector += Vector2.right;
 
         moveVector.Normalize();
-        
+
         float currentSpeed = isCrouching ? originalMoveSpeed * crouchSpeedMultiplier : originalMoveSpeed;
         moveVector *= currentSpeed;
 
         rb.linearVelocity = moveVector;
-        
-        if (Input.GetKeyDown(KeyCode.LeftShift) )
+
+        if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            if(isCrouching){
+            if (isCrouching)
+            {
                 UnCrouch();
             }
-            else{
+            else
+            {
                 Crouch();
             }
         }
     }
-    
+
     void Crouch()
     {
         isCrouching = true;
     }
-    
+
     void UnCrouch()
     {
         isCrouching = false;
