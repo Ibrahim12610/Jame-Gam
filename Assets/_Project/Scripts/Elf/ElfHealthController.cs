@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 public class ElfHealthController : MonoBehaviour
 {
-    [SerializeField] private float totalElfHealth = 100f;
+    //[SerializeField] private float totalElfHealth = 100f;
     [SerializeField] private float currentElfHealth = 100f;
     
     public UnityEvent onElfKilled;

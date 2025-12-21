@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using NUnit.Framework.Constraints;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -9,9 +10,15 @@ public class PlayerAttackController : MonoBehaviour
     [SerializeField] private CircleCollider2D impulseCollider;
     [SerializeField] private float colliderOffsetDistance = 0.4f;
     
+    [SerializeField] private float damageDelay = 0f;
+    [SerializeField] private float attackDuration = .1f;
+    
+    
     private Vector2 _moveInput;
     private Vector2 _facingDirection = Vector2.down;
     private CircleCollider2D _directionalCollider;
+    
+    [HideInInspector] public bool isAttacking = false;
     
     private void Awake()
     {
@@ -21,10 +28,10 @@ public class PlayerAttackController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Mouse0) && !isAttacking)
         {
             StopAllCoroutines();
-            attackPoint.SetActive(false);
+            isAttacking = true;
             StartCoroutine(HandleAttackPointActivation());
         }
 
@@ -41,9 +48,15 @@ public class PlayerAttackController : MonoBehaviour
 
     private IEnumerator HandleAttackPointActivation()
     {
+        if (damageDelay > 0f)
+            yield return new WaitForSeconds(damageDelay);
+
         attackPoint.SetActive(true);
-        yield return new WaitForSeconds(0.05f);
+        
+        yield return new WaitForSeconds(attackDuration);
+
         attackPoint.SetActive(false);
+        isAttacking = false;
     }
     
     private void UpdateDirectionalCollider()

@@ -26,7 +26,8 @@ public class ElfMovement : MonoBehaviour
         _agent = GetComponent<NavMeshAgent>();
         _agent.updateRotation = false;
         _agent.updateUpAxis = false;
-        
+        _agent.autoRepath = false;
+
         CachePatrolPoints();
     }
 
@@ -66,9 +67,17 @@ public class ElfMovement : MonoBehaviour
     {
         if (!_agent.enabled || _patrolPoints.Count == 0)
             return;
+        
+        if (!_agent.isOnNavMesh)
+        {
+            Debug.LogWarning("Attempting to return to navmesh");
+            TryReturnToNavMesh();
+            return;
+        }
 
         if (_isPaused)
         {
+            Debug.Log("Attempting to head towards player");
             _agent.SetDestination(PlayerManager.Instance.GetPlayerTransform().position);
         }
 
@@ -109,28 +118,50 @@ public class ElfMovement : MonoBehaviour
         }
     }
     
+    private bool TryReturnToNavMesh(float searchRadius = 1f)
+    {
+        if (_agent.isOnNavMesh)
+            return true;
+
+        if (NavMesh.SamplePosition(transform.position, out NavMeshHit hit, searchRadius, NavMesh.AllAreas))
+        {
+            _agent.SetDestination(hit.position);
+            return false;
+        }
+
+        return false;
+    }
+    
     private void SetNextPatrolPoint()
     {
+        if (!_agent.enabled || !_agent.isOnNavMesh || _patrolPoints.Count == 0)
+            return;
+
         var target = _patrolPoints[_currentPatrolIndex];
-        if(target != null)
+        if (target != null)
             _agent.SetDestination(target.position);
-        
-        _currentPatrolIndex++;
-        if (_currentPatrolIndex >= _patrolPoints.Count)
-            _currentPatrolIndex = 0;
+
+        _currentPatrolIndex = (_currentPatrolIndex + 1) % _patrolPoints.Count;
     }
     
     private void PausePatrol()
     {
         _isPaused = true;
         _isWaiting = false;
-        _agent.isStopped = false;
+
+        if (_agent.enabled && _agent.isOnNavMesh)
+            _agent.isStopped = false;
     }
 
     private void ResumePatrol()
     {
         _isPaused = false;
+
+        if (!_agent.enabled || !_agent.isOnNavMesh)
+            return;
+
         _agent.isStopped = false;
+
         if (!_agent.hasPath)
             SetNextPatrolPoint();
     }
