@@ -19,6 +19,7 @@ public class ElfMovement : MonoBehaviour
     private int _currentPatrolIndex;
     private bool _isWaiting;
     private float _waitTimer;
+    private bool _isPaused;
 
     private void Awake()
     {
@@ -40,6 +41,18 @@ public class ElfMovement : MonoBehaviour
             _patrolPoints.Add(patrolParent.GetChild(i));
         }
     }
+    
+    private void OnEnable()
+    {
+        ElfDetectionController.OnElfDetectedPlayer += PausePatrol;
+        ElfDetectionController.OnElfNoLongerDetectedPlayer += ResumePatrol;
+    }
+
+    private void OnDisable()
+    {
+        ElfDetectionController.OnElfDetectedPlayer -= PausePatrol;
+        ElfDetectionController.OnElfNoLongerDetectedPlayer -= ResumePatrol;
+    }
 
     private void Start()
     {
@@ -54,12 +67,17 @@ public class ElfMovement : MonoBehaviour
         if (!_agent.enabled || _patrolPoints.Count == 0)
             return;
 
+        if (_isPaused)
+        {
+            _agent.SetDestination(PlayerManager.Instance.GetPlayerTransform().position);
+        }
+
         HandlePatrolLogic();
     }
 
     private void HandlePatrolLogic()
     {
-        if (_agent.pathPending)
+        if (_isPaused || !_agent.enabled || _patrolPoints.Count == 0)
             return;
         
         if (!_isWaiting && _agent.remainingDistance <= arriveDistance)
@@ -99,5 +117,18 @@ public class ElfMovement : MonoBehaviour
         _currentPatrolIndex++;
         if (_currentPatrolIndex >= _patrolPoints.Count)
             _currentPatrolIndex = 0;
+    }
+    
+    private void PausePatrol()
+    {
+        _isPaused = true;
+    }
+
+    private void ResumePatrol()
+    {
+        _isPaused = false;
+
+        if (!_agent.hasPath)
+            SetNextPatrolPoint();
     }
 }
