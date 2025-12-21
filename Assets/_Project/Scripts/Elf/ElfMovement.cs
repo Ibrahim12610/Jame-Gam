@@ -112,7 +112,8 @@ public class ElfMovement : MonoBehaviour
     private void SetNextPatrolPoint()
     {
         var target = _patrolPoints[_currentPatrolIndex];
-        _agent.SetDestination(target.position);
+        if(target != null)
+            _agent.SetDestination(target.position);
         
         _currentPatrolIndex++;
         if (_currentPatrolIndex >= _patrolPoints.Count)
