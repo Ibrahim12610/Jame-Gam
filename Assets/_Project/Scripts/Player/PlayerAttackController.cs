@@ -12,17 +12,21 @@ public class PlayerAttackController : MonoBehaviour
     
     [SerializeField] private float damageDelay = 0f;
     [SerializeField] private float attackDuration = .1f;
-    
-    private Vector2 _moveInput;
-    private Vector2 _facingDirection = Vector2.down;
-    private CircleCollider2D _directionalCollider;
+    [SerializeField] private AudioClip attackSound;
     
     [HideInInspector] public bool isAttacking = false;
+    
+    private CircleCollider2D _directionalCollider;
+    private AudioSource _audioSource;
+    private Vector2 _moveInput;
+    private Vector2 _facingDirection = Vector2.down;
+    
     
     private void Awake()
     {
         attackPoint.SetActive(false);
         _directionalCollider = attackPoint.GetComponent<CircleCollider2D>();
+        _audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -31,6 +35,7 @@ public class PlayerAttackController : MonoBehaviour
         {
             StopAllCoroutines();
             isAttacking = true;
+            _audioSource.PlayOneShot(attackSound);
             StartCoroutine(HandleAttackPointActivation());
         }
 
