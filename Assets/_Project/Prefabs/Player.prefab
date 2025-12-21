@@ -408,8 +408,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
+  m_Offset: {x: 0, y: -0.2724464}
+  m_Radius: 0.7022612
 --- !u!114 &8136517624860684230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -425,7 +425,7 @@ MonoBehaviour:
   _impulseforce: 5
   impulseDuration: 0.5
   playSound: 0
-  spawnParticles: 1
+  spawnParticles: 0
 --- !u!114 &1103075730567698810
 MonoBehaviour:
   m_ObjectHideFlags: 0

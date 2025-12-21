@@ -123,12 +123,14 @@ public class ElfMovement : MonoBehaviour
     private void PausePatrol()
     {
         _isPaused = true;
+        _isWaiting = false;
+        _agent.isStopped = false;
     }
 
     private void ResumePatrol()
     {
         _isPaused = false;
-
+        _agent.isStopped = false;
         if (!_agent.hasPath)
             SetNextPatrolPoint();
     }
