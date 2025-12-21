@@ -9,10 +9,12 @@ public class ExitDoorTriggerController : MonoBehaviour
     [SerializeField] private float exitSpeed = 1f;
     [SerializeField] private AudioClip exitSound;
     
-    private float _totalTime = 0f;
+    private float _totalTime = 1f;
     private bool _isPlayerOnCollider = false;
+    private bool _isExiting = false;
+
     private AudioSource _audioSource;
-    private bool _isExiting= false;
+    private Coroutine _fadeRoutine;
 
     private void Awake()
     {
@@ -22,41 +24,82 @@ public class ExitDoorTriggerController : MonoBehaviour
     private void Update()
     {
         UpdateSlider();
+        sliderGameObject.SetActive(_isPlayerOnCollider && PlayerManager.Instance);
 
-        if (_isPlayerOnCollider && PlayerManager.Instance)
+        bool isHolding = Input.GetKey(KeyCode.E) && _isPlayerOnCollider;
+
+        if (isHolding)
         {
-            sliderGameObject.SetActive(true);
+            HandleExitHold();
         }
         else
         {
-            sliderGameObject.SetActive(false);
+            HandleExitRelease();
         }
 
-        if (Input.GetKey(KeyCode.E) && _isPlayerOnCollider)
+        if (_totalTime >= 1f)
         {
-            _totalTime += Time.deltaTime * exitSpeed;
-            
-            if (!_isExiting)
-            {
-                _audioSource.PlayOneShot(exitSound);
-            }
-            _isExiting = true;
+            CompleteExit();
         }
-        else
+    }
+    
+    private void HandleExitHold()
+    {
+        _totalTime += Time.deltaTime * exitSpeed;
+
+        if (_isExiting) return;
+        
+        _isExiting = true;
+        StartExitAudio();
+    }
+    
+    
+    private void HandleExitRelease()
+    {
+        if (_isExiting)
         {
             _isExiting = false;
-            _audioSource.Stop();
-            _totalTime = 0f;
+            StopExitAudio();
         }
 
-        if (_totalTime > 1f)
-        {
-            PlayerManager.Instance.HandleDestroy();
-            SceneChangeManager.Instance.LoadNextStage("EndSplashScreenScene");
-        }
-        
+        _totalTime = 0f;
     }
+    
+    private void StartExitAudio()
+    {
+        if (_fadeRoutine != null)
+        {
+            StopCoroutine(_fadeRoutine);
+            _fadeRoutine = null;
+        }
 
+        _audioSource.volume = 1f;
+
+        if (_audioSource.isPlaying) return;
+        
+        _audioSource.clip = exitSound;
+        _audioSource.Play();
+    }
+    
+    private void StopExitAudio()
+    {
+        if (_audioSource.isPlaying)
+        {
+            _fadeRoutine = StartCoroutine(
+                GameUtility.FadeOutAndStop(_audioSource, 0.25f)
+            );
+        }
+    }
+    
+    private void CompleteExit()
+    {
+        StopExitAudio();
+        _totalTime = 0f;
+
+        PlayerManager.Instance.HandleDestroy();
+        SceneChangeManager.Instance.LoadNextStage("EndSplashScreenScene");
+    }
+    
     private void OnTriggerEnter2D(Collider2D other)
     {
         _isPlayerOnCollider = true;

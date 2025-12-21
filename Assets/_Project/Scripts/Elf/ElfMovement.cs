@@ -17,6 +17,7 @@ public class ElfMovement : MonoBehaviour
     private Transform _player;
     private NavMeshAgent _agent;
     private AudioSource _audioSource;
+    private Coroutine _fadeRoutine;
     
     private int _currentPatrolIndex;
     private bool _isWaiting;
@@ -85,19 +86,19 @@ public class ElfMovement : MonoBehaviour
         if (_isPaused)
         {
             UpdateFacingTowardsPlayer();
+            
             if (_playNotifySound)
             {
                 _playNotifySound = false;
-                _audioSource.clip = notifySound;
-                _audioSource.loop = true;
-                _audioSource.Play();
+                StartNotifyAudio();
             }
             
             return;
         }
 
         _playNotifySound = true;
-        _audioSource.Stop();
+        StopNotifyAudio();
+        
         HasFacingOverride = false;
         HandlePatrolLogic();
     }
@@ -200,5 +201,31 @@ public class ElfMovement : MonoBehaviour
 
         if (!_agent.hasPath)
             SetNextPatrolPoint();
+    }
+    
+    private void StartNotifyAudio()
+    {
+        if (_fadeRoutine != null)
+        {
+            StopCoroutine(_fadeRoutine);
+            _fadeRoutine = null;
+        }
+
+        _audioSource.volume = 1f;
+        _audioSource.clip = notifySound;
+        _audioSource.loop = true;
+
+        if (!_audioSource.isPlaying)
+            _audioSource.Play();
+    }
+
+    private void StopNotifyAudio()
+    {
+        if (_audioSource.isPlaying)
+        {
+            _fadeRoutine = StartCoroutine(
+                GameUtility.FadeOutAndStop(_audioSource, 0.25f)
+            );
+        }
     }
 }
