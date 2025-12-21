@@ -97,7 +97,7 @@ public class ExitDoorTriggerController : MonoBehaviour
         _totalTime = 0f;
 
         PlayerManager.Instance.HandleDestroy();
-        SceneChangeManager.Instance.LoadNextStage("EndSplashScreenScene");
+        SceneChangeManager.Instance.LoadNextStage("EndSplashScreenScene2");
     }
     
     private void OnTriggerEnter2D(Collider2D other)
