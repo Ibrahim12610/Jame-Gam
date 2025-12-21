@@ -23,6 +23,8 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector2 moveVector = Vector2.zero;
 
+        if (PlayerManager.Instance.IsInImpulse()) return;
+        
         if (Input.GetKey(KeyCode.W))
             moveVector += Vector2.up;
         if (Input.GetKey(KeyCode.A))

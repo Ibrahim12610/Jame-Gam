@@ -4,6 +4,8 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour
 {
     public static PlayerManager Instance;
+    
+    private ImpulseController _impulseController;
 
     private void Awake()
     {
@@ -14,6 +16,8 @@ public class PlayerManager : MonoBehaviour
         }
 
         Instance = this;
+        
+        _impulseController = GetComponent<ImpulseController>();
     }
 
     public void SetPlayerTransform(Transform t)
@@ -25,4 +29,11 @@ public class PlayerManager : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
+    public Transform GetPlayerTransform()
+    {
+        return gameObject.transform;
+    }
+    
+    public bool IsInImpulse() => _impulseController.IsInImpulse();
 }

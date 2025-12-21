@@ -12,6 +12,6 @@ public class EndGameSceneController : MonoBehaviour
     private IEnumerator HandleSceneChange()
     {
         yield return new WaitForSeconds(3f);
-        SceneChangeManager.Instance.LoadNextStage("CreditScene");
+        SceneChangeManager.Instance.LoadNextStage("CreditScene2");
     }
 }
