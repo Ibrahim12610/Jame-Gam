@@ -134,7 +134,7 @@ MonoBehaviour:
   impulseCollider: {fileID: 842039378156815130}
   colliderOffsetDistance: 0.4
   damageDelay: 0
-  attackDuration: 1
+  attackDuration: 0.1
   isAttacking: 0
 --- !u!1 &1788788809763119454
 GameObject:
@@ -742,5 +742,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a5f3b8f98c87674190881753af51920, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  damageAmount: 34
+  damageAmount: 15
   impulseSource: {fileID: 790151368263913613}
