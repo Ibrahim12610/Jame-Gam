@@ -5,12 +5,13 @@ using UnityEngine;
 public class AttackPointController : MonoBehaviour
 {
     [SerializeField] private float damageAmount = 50f;
-    
+    [SerializeField] private GameObject impulseSource;
     private readonly HashSet<ElfHealthController> _hitTargets = new();
 
     private void OnEnable()
     {
         _hitTargets.Clear();
+        impulseSource.gameObject.SetActive(true);
     }
 
     private void OnTriggerEnter2D(Collider2D otherCollider)
@@ -22,6 +23,7 @@ public class AttackPointController : MonoBehaviour
             return;
 
         _hitTargets.Add(health);
+        impulseSource.SetActive(false);
         health.TakeDamage(damageAmount);
     }
 }

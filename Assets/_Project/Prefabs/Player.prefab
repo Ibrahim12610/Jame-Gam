@@ -133,6 +133,9 @@ MonoBehaviour:
   attackPoint: {fileID: 7817461446417057646}
   impulseCollider: {fileID: 842039378156815130}
   colliderOffsetDistance: 0.4
+  damageDelay: 0
+  attackDuration: 1
+  isAttacking: 0
 --- !u!1 &1788788809763119454
 GameObject:
   m_ObjectHideFlags: 0
@@ -739,3 +742,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   damageAmount: 5
+  impulseSource: {fileID: 790151368263913613}

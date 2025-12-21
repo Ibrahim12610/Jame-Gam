@@ -13,7 +13,6 @@ public class PlayerAttackController : MonoBehaviour
     [SerializeField] private float damageDelay = 0f;
     [SerializeField] private float attackDuration = .1f;
     
-    
     private Vector2 _moveInput;
     private Vector2 _facingDirection = Vector2.down;
     private CircleCollider2D _directionalCollider;
