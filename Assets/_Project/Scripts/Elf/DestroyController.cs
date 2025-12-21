@@ -4,7 +4,9 @@ using UnityEngine;
 public class DestroyController : MonoBehaviour
 {
     [SerializeField] private float fadeDuration = 0.3f;
-
+    [SerializeField] private GameObject healthCollider;
+    [SerializeField] private GameObject impulseCollider;
+    
     private SpriteRenderer _spriteRenderer;
     private Coroutine _fadeRoutine;
     private AudioSource _audioSource;
@@ -21,6 +23,8 @@ public class DestroyController : MonoBehaviour
             StopCoroutine(_fadeRoutine);
 
         StopNotifyAudio();
+        healthCollider.SetActive(false);
+        impulseCollider.SetActive(false);
         _fadeRoutine = StartCoroutine(FadeAndDestroy());
     }
 
