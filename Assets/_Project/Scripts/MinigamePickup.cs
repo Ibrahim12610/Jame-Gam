@@ -4,16 +4,20 @@ using UnityEngine;
 public class MinigamePickup : MonoBehaviour
 {
     [SerializeField] private int amount;
+    [SerializeField] private GameObject soundSpawnerPrefab;
+    [SerializeField] private AudioClip startMiniGameClip;
+    [SerializeField] private AudioClip minigameSuccessClip;
+    [SerializeField] private AudioClip minigameFailClip;
     
     public GameObject minigameCanvas;
     private bool _playerInside = false;
     private MiniGame _currentGame;
     
-
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E) && _playerInside && _currentGame == null)
         {
+            HandeAudio(startMiniGameClip);
             HandleMiniGameStart();
         }
     }
@@ -35,21 +39,21 @@ public class MinigamePickup : MonoBehaviour
     private void HandleMiniGameStart()
     {
         Debug.Log("Spawning minigame");
-        GameUtility.PauseMenuDisableLogic();
+        GameUtility.PauseMenuDisableLogic("PopUp");
 
         var go = Instantiate(minigameCanvas);
         _currentGame = go.GetComponent<MiniGame>();
 
-        if (_currentGame == null)
-        {
-            Debug.LogError("Minigame prefab is missing MiniGame component!");
-            Destroy(go);
-            GameUtility.PauseMenuEnableLogic();
-            return;
-        }
-
         _currentGame.OnMiniGameSuccess += HandleMiniGameSuccess;
         _currentGame.OnMiniGameFail += HandleMiniGameFail;
+    }
+    
+    private void HandeAudio(AudioClip audioClip)
+    {
+        var go = Instantiate(soundSpawnerPrefab);
+        var soundSpawner =  go.GetComponent<SoundSpawnerController>();
+        soundSpawner.clip = audioClip;
+        soundSpawner.PlayClip();
     }
     
     private void CleanupSubscriptions()
@@ -65,15 +69,17 @@ public class MinigamePickup : MonoBehaviour
     private void HandleMiniGameSuccess()
     {
         CleanupSubscriptions();
-        GameUtility.PauseMenuEnableLogic();
+        HandeAudio(minigameSuccessClip);
+        GameUtility.PauseMenuEnableLogic("PopUp");
         MiniGameManager.Instance.OnMiniGameComplete(1);
         Destroy(gameObject);
     }
     
     private void HandleMiniGameFail()
     {
+        HandeAudio(minigameFailClip);
         CleanupSubscriptions();
-        GameUtility.PauseMenuEnableLogic();
+        GameUtility.PauseMenuEnableLogic("PopUp");
     }
     
     private void OnDestroy()

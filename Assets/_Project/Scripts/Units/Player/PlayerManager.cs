@@ -9,6 +9,9 @@ public class PlayerManager : MonoBehaviour
     private PlayerAttackController _playerAttackController;
     private PlayerMovement _playerMovement;
     private PlayerAnimator _playerAnimator;
+    
+    private bool _pauseMenuActive = false;
+    private bool _popUpActive = false;
 
     private void Awake()
     {
@@ -42,23 +45,27 @@ public class PlayerManager : MonoBehaviour
     }
     
     public bool IsInImpulse() => _impulseController.IsInImpulse();
+    
+    public void DisablePlayerLogic(string origin)
+    {
+        if (origin == "PauseMenu") _pauseMenuActive = true;
+        if (origin == "PopUp") _popUpActive = true;
 
-    public void DisablePlayerAttack() =>
         _playerAttackController.disableAttack = true;
-
-    public void EnablePlayerAttack() =>
-        _playerAttackController.disableAttack = false;
-
-    public void DisablePlayerMovement() =>
         _playerMovement.disableMovement = true;
-    
-    public void EnablePlayerMovement() =>
-        _playerMovement.disableMovement = false;
-    
-    public void DisablePlayerAnimator() =>
         _playerAnimator.disableAnimator = true;
-    
-    public void EnablePlayerAnimator() =>
-        _playerAnimator.disableAnimator = false;
+    }
 
+    public void EnablePlayerLogic(string origin)
+    {
+        if(origin == "PauseMenu") _pauseMenuActive = false;
+        if(origin == "PopUp") _popUpActive = false;
+
+        if (!_popUpActive && !_pauseMenuActive)
+        {
+            _playerAttackController.disableAttack = false;
+            _playerMovement.disableMovement = false;
+            _playerAnimator.disableAnimator = false;
+        }
+    }
 }

@@ -193,6 +193,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChristmasLightsPickUp
   amount: 1
+  soundSpawnerPrefab: {fileID: 5884584617349461865, guid: e187da576b0c2d54d87c74f712b73a5e, type: 3}
+  startMiniGameClip: {fileID: 8300000, guid: 1b1c561010235e547b75b54e4f406250, type: 3}
+  minigameSuccessClip: {fileID: 8300000, guid: c694ec9ab0a408a4ebfff9884448f948, type: 3}
+  minigameFailClip: {fileID: 8300000, guid: a984ff68483ccae4c8adb5d7c30ed9d3, type: 3}
   minigameCanvas: {fileID: 7035402430942551674, guid: 47021e281a46c483b922f368590aafb8, type: 3}
 --- !u!58 &4156226304964317368
 CircleCollider2D:
@@ -374,6 +378,7 @@ GameObject:
   - component: {fileID: 3940405428721856990}
   - component: {fileID: 799159850752254664}
   - component: {fileID: 2394172344510183607}
+  - component: {fileID: 2560950017547961751}
   m_Layer: 5
   m_Name: SliderInstructionPopup
   m_TagString: Untagged
@@ -439,6 +444,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2560950017547961751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8726137724562309413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2028d10d713d552409d326f92662fc13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScaleOnEnable
 --- !u!1001 &980119320819066994
 PrefabInstance:
   m_ObjectHideFlags: 0
