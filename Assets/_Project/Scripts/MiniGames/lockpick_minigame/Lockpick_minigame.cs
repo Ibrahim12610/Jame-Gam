@@ -87,9 +87,9 @@ public class Lockpick_minigame : MiniGame
 
     void Win()
     {
-        Close();
         RaiseSuccess();
         Debug.Log("LOCKPICK SUCCESS");
+        Close();
     }
 
     void Fail()
@@ -97,8 +97,8 @@ public class Lockpick_minigame : MiniGame
         onCooldown = true;
         Invoke(nameof(ResetCooldown), failCooldown);
         RaiseFail();
-        Close();
         Debug.Log("LOCKPICK FAILED");
+        Close();
     }
 
     void Close()

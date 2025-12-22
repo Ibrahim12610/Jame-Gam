@@ -42,14 +42,13 @@ public class cookie_minigame : MiniGame
     void Close()
     {
         active = false;
-        //TODO: A fade audio to indicate closer of the UI
         Destroy(gameObject);
     }
 
     void Win()
     {
-        Debug.Log("Cookie minigame won!");
         RaiseSuccess();
+        Debug.Log("Cookie minigame won!");
         Close();
     }
     
@@ -58,8 +57,8 @@ public class cookie_minigame : MiniGame
         onCooldown = true;
         Invoke(nameof(ResetCooldown), failCooldown);
         RaiseFail();
-        Close();
         Debug.Log("Cookie minigame failed!");
+        Close();
     }
     void ResetCooldown()
     {
