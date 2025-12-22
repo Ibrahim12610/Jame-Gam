@@ -1,7 +1,8 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class cookie_minigame : MonoBehaviour
+public class cookie_minigame : MiniGame
 {
     public static bool onCooldown;
     public float failCooldown = 1f;
@@ -16,13 +17,6 @@ public class cookie_minigame : MonoBehaviour
 
     void OnEnable()
     {
-        if (onCooldown)
-        {
-            gameObject.SetActive(false);
-            return;
-        }
-        
-       
         canvas.SetActive(true);
         active = true;
         
@@ -43,20 +37,19 @@ public class cookie_minigame : MonoBehaviour
     void Update()
     {
         if (!active) return;
-
-
     }
 
     void Close()
     {
         active = false;
-        
-        canvas.SetActive(false);
+        //TODO: A fade audio to indicate closer of the UI
+        Destroy(gameObject);
     }
 
     void Win()
     {
         Debug.Log("Cookie minigame won!");
+        RaiseSuccess();
         Close();
     }
     
@@ -64,6 +57,7 @@ public class cookie_minigame : MonoBehaviour
     {
         onCooldown = true;
         Invoke(nameof(ResetCooldown), failCooldown);
+        RaiseFail();
         Close();
         Debug.Log("Cookie minigame failed!");
     }

@@ -15,12 +15,15 @@ public class PlayerAttackController : MonoBehaviour
     [SerializeField] private AudioClip attackSound;
     
     [HideInInspector] public bool isAttacking = false;
+    [HideInInspector] public bool disableAttack = false;
     
     private CircleCollider2D _directionalCollider;
     private AudioSource _audioSource;
     private Vector2 _moveInput;
     private Vector2 _facingDirection = Vector2.down;
     private PlayerAnimator _playerAnimator;
+    
+    
     
     private void Awake()
     {
@@ -32,6 +35,8 @@ public class PlayerAttackController : MonoBehaviour
 
     private void Update()
     {
+        if (disableAttack) return;
+        
         if (Input.GetKeyDown(KeyCode.Mouse0) && !isAttacking)
         {
             StopAllCoroutines();

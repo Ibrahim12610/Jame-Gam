@@ -32,6 +32,8 @@ public class PlayerAnimator : MonoBehaviour
     private const string State_crouch_front_walk = "crouch_front_walk";
     private const string State_crouch_back_walk = "crouch_back_walk";
 
+    public bool disableAnimator = false;
+
     private void Awake()
     {
         _animator = GetComponent<Animator>();
@@ -42,6 +44,8 @@ public class PlayerAnimator : MonoBehaviour
     }
     void Update()
     {
+        if (disableAnimator) return;
+        
         Vector2 moveVector = Vector2.zero;
 
         if (!_isAttacking)

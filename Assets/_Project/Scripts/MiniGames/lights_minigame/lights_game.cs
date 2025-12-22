@@ -1,8 +1,9 @@
-
+using System;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
-public class lights_game : MonoBehaviour
+public class lights_game : MiniGame
 {
     public GameObject minigameCanvas;
     public Button[] lights;
@@ -14,23 +15,14 @@ public class lights_game : MonoBehaviour
     public static bool onCooldown = false;
     
     
-    private ChristmasLightsPickUp currentPickup;
+    private MinigamePickup currentPickup;
     private int pickupAmount;
-
+    
+    
     void OnEnable()
     {
-        if (onCooldown)
-        {
-            gameObject.SetActive(false);
-            return;
-        }
-
-      
         currentPickup = null;
-
-       
-      
-
+        
         active = true;
         safeIndex = Random.Range(0, lights.Length);
 
@@ -53,17 +45,16 @@ public class lights_game : MonoBehaviour
            
             if (currentPickup != null)
             {
-                MiniGameManager.Instance.OnMiniGameComplete(pickupAmount);
-                Destroy(currentPickup.gameObject);
                 currentPickup = null;
             }
+            RaiseSuccess();
         }
         else
         {
             Debug.Log("Sparks");
             onCooldown = true;
             Invoke(nameof(ResetCooldown), failCooldown);
-           
+            RaiseFail();
             currentPickup = null;
         }
 
@@ -71,7 +62,7 @@ public class lights_game : MonoBehaviour
     }
     
    
-    public void SetPickup(ChristmasLightsPickUp pickup, int amount)
+    public void SetPickup(MinigamePickup pickup, int amount)
     {
         currentPickup = pickup;
         pickupAmount = amount;
@@ -81,6 +72,7 @@ public class lights_game : MonoBehaviour
     {
        
         minigameCanvas.SetActive(false);
+        Destroy(gameObject);
     }
 
     void ResetCooldown()

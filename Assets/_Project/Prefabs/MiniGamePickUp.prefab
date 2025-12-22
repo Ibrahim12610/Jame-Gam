@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5952553034030554943}
   - component: {fileID: 4156226304964317368}
   m_Layer: 0
-  m_Name: ChristmasLights
+  m_Name: MiniGamePickUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -81,7 +81,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -188404207
-  m_SortingLayer: 4
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
@@ -106,9 +106,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ece97a8327d9a2b49959bbf4487bf2bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChristmasLightsPickUp
-  minigameCanvas: {fileID: 7035402430942551674, guid: 47021e281a46c483b922f368590aafb8, type: 3}
   amount: 1
   testMode: 1
+  minigameCanvas: {fileID: 7035402430942551674, guid: 47021e281a46c483b922f368590aafb8, type: 3}
 --- !u!58 &4156226304964317368
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -197,6 +197,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5307747896505754925, guid: 347fc0eba738bd340b8460714a3e2dc2, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 5194130764972804285, guid: 1d082282b7d0a4bda80eeb6d7e5771a9, type: 3}
     - target: {fileID: 8397638200123787935, guid: 347fc0eba738bd340b8460714a3e2dc2, type: 3}
       propertyPath: waypointTarget
       value: 
