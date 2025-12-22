@@ -204,7 +204,7 @@ MonoBehaviour:
   sliderGameObject: {fileID: 7597891176607212812}
   slider: {fileID: 503688602934987066}
   exitSpeed: 1
-  exitSound: {fileID: 8300000, guid: 942e06aca2265a748bfa414cfa578b15, type: 3}
+  exitSound: {fileID: 8300000, guid: 189147994dc776f4995e2a9e1a7ea558, type: 3}
 --- !u!82 &4114013067843199248
 AudioSource:
   m_ObjectHideFlags: 0

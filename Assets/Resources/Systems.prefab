@@ -1848,7 +1848,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b97035b0ff108d74d95401c059708703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneChangeManager
-  sceneFadeDuration: 1
+  sceneFadeDuration: 2
+  fadeDuration: 0.5
 --- !u!4 &907067311129458477 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3246729783402134021, guid: f4d9bbcb661ad5441bd3150b193e0972, type: 3}
