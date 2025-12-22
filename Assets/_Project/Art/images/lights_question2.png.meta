@@ -1,10 +1,34 @@
 fileFormatVersion: 2
-guid: f951dc688db3846b2a515b0a415f5614
+guid: bb79a964717ee4346bf3a08ef24d3779
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2677709557159798212
-    second: needle_chirstmas_0
+      213: -4552287767408060609
+    second: lights_question2_0
+  - first:
+      213: -6380329115941264123
+    second: lights_question2_1
+  - first:
+      213: 1923089286378699664
+    second: lights_question2_2
+  - first:
+      213: 1279465072643396635
+    second: lights_question2_3
+  - first:
+      213: -7738883962668863059
+    second: lights_question2_4
+  - first:
+      213: -2811286580098508604
+    second: lights_question2_5
+  - first:
+      213: -897728432004684724
+    second: lights_question2_6
+  - first:
+      213: -5902264054093406770
+    second: lights_question2_7
+  - first:
+      213: 2866111147430537112
+    second: lights_question2_8
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,23 +124,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: needle_chirstmas_0
+      name: lights_question2_0
       rect:
         serializedVersion: 2
-        x: 39
-        y: 39
-        width: 2
-        height: 24
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 0
+        y: 0
+        width: 64
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4c5ad26b7a2292520800000000000000
-      internalID: 2677709557159798212
+      spriteID: f375944056603d0c0800000000000000
+      internalID: -4552287767408060609
       vertices: []
       indices: 
       edges: []
@@ -125,7 +149,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e7de130752b147159c5554bea955fa2
+    spriteID: 980e0e09cd781413982a51f38363d91f
     internalID: 0
     vertices: []
     indices: 
@@ -133,9 +157,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":36.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      needle_chirstmas_0: 2677709557159798212
+      lights_question2_0: -4552287767408060609
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

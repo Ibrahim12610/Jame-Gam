@@ -1,10 +1,25 @@
 fileFormatVersion: 2
-guid: f951dc688db3846b2a515b0a415f5614
+guid: 2c5e3863f032c49588df005b97ce476a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2677709557159798212
-    second: needle_chirstmas_0
+      213: 55535335213659540
+    second: lights_mini_question1_0
+  - first:
+      213: 3390344958740207076
+    second: lights_mini_question1_1
+  - first:
+      213: -5835598228689573470
+    second: lights_mini_question1_2
+  - first:
+      213: -4178401524472821159
+    second: lights_mini_question1_3
+  - first:
+      213: -191635135010985139
+    second: lights_mini_question1_4
+  - first:
+      213: -803831524358799585
+    second: lights_mini_question1_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,23 +115,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: needle_chirstmas_0
+      name: lights_mini_question1_0
       rect:
         serializedVersion: 2
-        x: 39
-        y: 39
-        width: 2
-        height: 24
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 0
+        y: 0
+        width: 64
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4c5ad26b7a2292520800000000000000
-      internalID: 2677709557159798212
+      spriteID: 49574e7d71d45c000800000000000000
+      internalID: 55535335213659540
       vertices: []
       indices: 
       edges: []
@@ -125,7 +140,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e7de130752b147159c5554bea955fa2
+    spriteID: 46a80375bb00f45469b08ea9d618d42f
     internalID: 0
     vertices: []
     indices: 
@@ -133,9 +148,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":36.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      needle_chirstmas_0: 2677709557159798212
+      lights_mini_question1_0: 55535335213659540
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
