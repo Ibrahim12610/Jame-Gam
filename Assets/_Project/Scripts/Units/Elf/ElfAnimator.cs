@@ -76,7 +76,7 @@ public class ElfAnimator : MonoBehaviour
         if (desiredDirection.magnitude > 0.1f)
             _lastMoveDirection = desiredDirection.normalized;
 
-        Vector2 facingDirection = _lastMoveDirection;
+        var facingDirection = _lastMoveDirection;
 
         UpdateSpriteFlip(facingDirection);
 
@@ -100,8 +100,8 @@ public class ElfAnimator : MonoBehaviour
     
     string GetMovementState(bool isMoving, Vector2 direction)
     {
-        float absX = Mathf.Abs(direction.x);
-        float absY = Mathf.Abs(direction.y);
+        var absX = Mathf.Abs(direction.x);
+        var absY = Mathf.Abs(direction.y);
 
         if (absY > absX)
         {
