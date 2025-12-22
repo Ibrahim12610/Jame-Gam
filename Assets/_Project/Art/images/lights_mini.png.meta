@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f951dc688db3846b2a515b0a415f5614
+guid: dcc6ea0649fa74b808241983155763d8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2677709557159798212
-    second: needle_chirstmas_0
+      213: 1445940540701481455
+    second: lights_mini_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: needle_chirstmas_0
+      name: lights_mini_0
       rect:
         serializedVersion: 2
-        x: 39
-        y: 39
-        width: 2
-        height: 24
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 16
+        y: 13
+        width: 32
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4c5ad26b7a2292520800000000000000
-      internalID: 2677709557159798212
+      spriteID: fe919d6c243011410800000000000000
+      internalID: 1445940540701481455
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e7de130752b147159c5554bea955fa2
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      needle_chirstmas_0: 2677709557159798212
+      lights_mini_0: 1445940540701481455
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
