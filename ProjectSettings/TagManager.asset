@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - ImpulseSource
   layers:
   - Default
   - TransparentFX
@@ -13,6 +14,8 @@ TagManager:
   - UI
   - Santa
   - Obsticle
+  - Enemy
+  - 
   - 
   - 
   - 
@@ -38,6 +41,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Floor
+    uniqueID: 2569383749
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
@@ -46,9 +52,6 @@ TagManager:
     locked: 0
   - name: Background
     uniqueID: 3835373081
-    locked: 0
-  - name: Floor
-    uniqueID: 2569383749
     locked: 0
   - name: Environment
     uniqueID: 4106563089

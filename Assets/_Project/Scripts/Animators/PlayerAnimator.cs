@@ -6,94 +6,167 @@ public class PlayerAnimator : MonoBehaviour
     private Animator _animator;
     private SpriteRenderer _spriteRenderer;
     private Vector2 _lastMoveDirection = Vector2.down;
-    
-    private const string State_idle_forward= "forward_idle";
-    private const string State_idle_side= "side_idle";
-    private const string State_idle_back= "back_idle";
-    private const string State_walk_forward= "forward_walk";
-    private const string State_walk_side= "side_walk";
+    private PlayerMovement _playerMovement;
+    private bool _isCrouching;
+
+    [SerializeField] private float attackDuration = 0.35f;
+
+    private bool _isAttacking;
+    private float _attackTimer;
+
+    private const string State_idle_forward = "forward_idle";
+    private const string State_idle_side = "side_idle";
+    private const string State_idle_back = "back_idle";
+    private const string State_walk_forward = "forward_walk";
+    private const string State_walk_side = "side_walk";
     private const string State_walk_back = "walk_back";
-    
+
+    private const string State_attack_forward = "forward_attack";
+    private const string State_attack_side = "side_attack";
+    private const string State_attack_back = "back_attack";
+
+    private const string State_crouch_back = "crouch_back";
+    private const string State_crouch_front = "crouch_front";
+    private const string State_crouch_side = "crouch_side";
+    private const string State_crouch_side_walk = "crouch_side_walk";
+    private const string State_crouch_front_walk = "crouch_front_walk";
+    private const string State_crouch_back_walk = "crouch_back_walk";
+
+    public bool disableAnimator = false;
+
     private void Awake()
     {
         _animator = GetComponent<Animator>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        _playerMovement = GetComponent<PlayerMovement>();
+        _isCrouching = _playerMovement.isCrouching;
+
     }
     void Update()
     {
+        if (disableAnimator) return;
+        
         Vector2 moveVector = Vector2.zero;
 
-        if (Input.GetKey(KeyCode.W))
-            moveVector += Vector2.up;
-        if (Input.GetKey(KeyCode.A))
-            moveVector += Vector2.left;
-        if (Input.GetKey(KeyCode.S))
-            moveVector += Vector2.down;
-        if (Input.GetKey(KeyCode.D))
-            moveVector += Vector2.right;
-        
+        if (!_isAttacking)
+        {
+            if (Input.GetKey(KeyCode.W)) moveVector += Vector2.up;
+            if (Input.GetKey(KeyCode.A)) moveVector += Vector2.left;
+            if (Input.GetKey(KeyCode.S)) moveVector += Vector2.down;
+            if (Input.GetKey(KeyCode.D)) moveVector += Vector2.right;
+        }
+
+        UpdateAttackTimer();
         UpdateAnimations(moveVector);
+    }
+
+    public void TriggerAttack(Vector2? forcedDirection = null)
+    {
+        if (_isAttacking) return;
+
+        _isAttacking = true;
+        _attackTimer = attackDuration;
+
+        if (forcedDirection.HasValue && forcedDirection.Value.sqrMagnitude > 0.01f)
+        {
+            _lastMoveDirection = forcedDirection.Value.normalized;
+        }
+    }
+
+    void UpdateAttackTimer()
+    {
+        if (!_isAttacking) return;
+
+        _attackTimer -= Time.deltaTime;
+        if (_attackTimer <= 0f)
+        {
+            _isAttacking = false;
+        }
     }
 
     void UpdateAnimations(Vector2 moveVector)
     {
-        
         if (moveVector.magnitude > 0.1f)
         {
             _lastMoveDirection = moveVector.normalized;
         }
+        Vector2 direction = _isAttacking
+            ? _lastMoveDirection
+            : (moveVector.magnitude > 0.1f ? moveVector.normalized : _lastMoveDirection);
 
-        
-        bool isMoving = moveVector.magnitude > 0.1f;
-        Vector2 currentDirection = isMoving ? moveVector.normalized : _lastMoveDirection;
+        UpdateSpriteFlip(direction);
 
-       
-        if (_spriteRenderer != null)
-        {
-            float absX = Mathf.Abs(currentDirection.x);
-            float absY = Mathf.Abs(currentDirection.y);
-            
-           
-            if (absX > absY)
-            {
-                _spriteRenderer.flipX = currentDirection.x < 0;
-            }
-        }
+        string state = _isAttacking
+            ? GetAttackState(direction)
+            : GetMovementState(moveVector.magnitude > 0.1f, direction);
 
-        string animationState = GetAnimationState(isMoving, currentDirection);
-        
-        _animator.Play(animationState);
+        _animator.Play(state);
     }
 
-    string GetAnimationState(bool isMoving, Vector2 direction)
+    string GetMovementState(bool isMoving, Vector2 direction)
     {
-       
         float absX = Mathf.Abs(direction.x);
         float absY = Mathf.Abs(direction.y);
+        bool isCrouching = _playerMovement.isCrouching;
 
-        string stateName;
-
-        if (absY > absX)
+        if (!isCrouching)
         {
-            
-            if (direction.y < 0)
+            if (absY > absX)
             {
-               
-                stateName = isMoving ? State_walk_forward : State_idle_forward;
+                if (direction.y < 0)
+                {
+                    return isMoving ? State_walk_forward : State_idle_forward;
+                }
+                else
+                {
+                    return isMoving ? State_walk_back : State_idle_back;
+                }
             }
             else
             {
-                
-                stateName = isMoving ? State_walk_back : State_idle_back;
+                return isMoving ? State_walk_side : State_idle_side;
             }
         }
         else
         {
-            
-            stateName = isMoving ? State_walk_side : State_idle_side;
+            if (absY > absX)
+            {
+                if (direction.y < 0)
+                {
+                    return isMoving ? State_crouch_front_walk : State_crouch_front;
+                }
+                else
+                {
+                    return isMoving ? State_crouch_back_walk : State_crouch_back;
+                }
+            }
+            else
+            {
+                return isMoving ? State_crouch_side_walk : State_crouch_side;
+            }
         }
 
-        return stateName;
     }
-    
+
+    string GetAttackState(Vector2 direction)
+    {
+        float absX = Mathf.Abs(direction.x);
+        float absY = Mathf.Abs(direction.y);
+
+        if (absY > absX)
+        {
+            return direction.y < 0
+                ? State_attack_forward
+                : State_attack_back;
+        }
+
+        return State_attack_side;
+    }
+
+    void UpdateSpriteFlip(Vector2 direction)
+    {
+        if (_spriteRenderer == null) return;
+
+        _spriteRenderer.flipX = direction.x < 0;
+    }
 }
