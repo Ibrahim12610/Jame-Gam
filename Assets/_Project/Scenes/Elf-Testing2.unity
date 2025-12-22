@@ -10326,10 +10326,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 4753305746054076836, guid: f41891f510c335946ac20b41b11463e6, type: 3}
-      propertyPath: colliderOffsetDistance
-      value: 0.6
-      objectReference: {fileID: 0}
     - target: {fileID: 7672670974687617821, guid: f41891f510c335946ac20b41b11463e6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.5

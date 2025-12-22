@@ -133,7 +133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   attackPoint: {fileID: 7817461446417057646}
   impulseCollider: {fileID: 842039378156815130}
-  colliderOffsetDistance: 1
+  colliderOffsetDistance: 0.6
   damageDelay: 0
   attackDuration: 0.5
   attackSound: {fileID: 8300000, guid: c797bcd7595577242868d761296e9af7, type: 3}
