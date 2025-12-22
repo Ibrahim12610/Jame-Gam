@@ -7,9 +7,11 @@ public class PlayerManager : MonoBehaviour
     
     private ImpulseController _impulseController;
     private PlayerAttackController _playerAttackController;
-    private PlayerMovement _playerMovement;
+    public PlayerMovement _playerMovement;
     private PlayerAnimator _playerAnimator;
 
+    [HideInInspector] public EnemyAI[] soundListeners;
+    
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -25,7 +27,11 @@ public class PlayerManager : MonoBehaviour
         _playerMovement = GetComponent<PlayerMovement>();
         _playerAnimator = GetComponent<PlayerAnimator>();
     }
-
+    private void Start()
+    {
+        FindSoundListenersInScene();
+    }
+    
     public void SetPlayerTransform(Transform t)
     {
         transform.position = t.position;
@@ -39,6 +45,12 @@ public class PlayerManager : MonoBehaviour
     public Transform GetPlayerTransform()
     {
         return gameObject.transform;
+    }
+    
+    //RUN THIS WHEN THE GAME BEGINS
+    public void FindSoundListenersInScene()
+    {
+        soundListeners = FindObjectsByType<EnemyAI>(FindObjectsSortMode.None);
     }
     
     public bool IsInImpulse() => _impulseController.IsInImpulse();

@@ -118,9 +118,9 @@ public class SantaChasing : StateMachineBehaviour
 
     void IncreasePossiblePlayerPos()
     {
-        lastPlayerRadius += ai.player.movement.moveSpeed * Time.deltaTime;
+        lastPlayerRadius += ai.player._playerMovement.moveSpeed * Time.deltaTime;
         DebugDrawCircle(lastPlayerPosOrigin, lastPlayerRadius);
-        if (lastPlayerRadius >= returnToPatrolDelay * ai.player.movement.moveSpeed)
+        if (lastPlayerRadius >= returnToPatrolDelay * ai.player._playerMovement.moveSpeed)
             animator.SetTrigger("lostPlayer");
     }
     void UpdatePlayerPos()
