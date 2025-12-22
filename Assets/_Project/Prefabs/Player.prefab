@@ -254,7 +254,7 @@ GameObject:
   - component: {fileID: 8495101181358013102}
   - component: {fileID: 3208954812301413250}
   - component: {fileID: 4714970608268374135}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -380,6 +380,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   moveSpeed: 4
   crouchSpeedMultiplier: 0.5
+  footstepSoundSignalDelay: 0
   isCrouching: 0
   disableMovement: 0
 --- !u!114 &9088192208243975228
@@ -430,6 +431,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb9bb24b56031ef4c9d5eecea18859e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  _playerMovement: {fileID: 0}
+  soundListeners: []
 --- !u!82 &8495101181358013102
 AudioSource:
   m_ObjectHideFlags: 0
