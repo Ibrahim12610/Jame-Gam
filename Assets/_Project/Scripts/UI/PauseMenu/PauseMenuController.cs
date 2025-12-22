@@ -24,7 +24,7 @@ public class PauseMenuController : MonoBehaviour
         Time.timeScale = 0;
         pauseMenu.SetActive(true);
 
-        GameUtility.PauseMenuDisableLogic();
+        GameUtility.PauseMenuDisableLogic("PauseMenu");
     }
 
     public void OnResumeButtonClicked()
@@ -32,7 +32,7 @@ public class PauseMenuController : MonoBehaviour
         Time.timeScale = 1;
         pauseMenu.SetActive(false);
         
-        GameUtility.PauseMenuEnableLogic();
+        GameUtility.PauseMenuEnableLogic("PauseMenu");
     }
     
     public void OnRestartButtonClicked()
