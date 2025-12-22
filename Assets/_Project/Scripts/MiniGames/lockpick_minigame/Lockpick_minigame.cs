@@ -3,21 +3,24 @@ using UnityEngine.UI;
 
 public class Lockpick_minigame : MiniGame
 {
-    [Header("UI")]
+   [Header("UI")]
     public GameObject canvas;
-    public Image successArc;     
+    public Image successArc;
     public RectTransform needle;
 
     [Header("Gameplay")]
     public float needleSpeed = 180f;
+    [Range(0.05f, 0.9f)]
     public float startArcSize = 0.6f;
     public float arcShrink = 0.1f;
     public int roundsToWin = 3;
     public float failCooldown = 1f;
 
-    float angle;
-    float arcStart;
-    float arcSize;
+    [Header("Feel (Optional)")]
+    [Tooltip("Extra forgiveness added to success arc (normalized 0–1)")]
+    public float forgiveness = 0.02f;
+
+    float needleAngle;   // 0–360 (0 = top)
     int round;
 
     public static bool onCooldown;
@@ -29,6 +32,8 @@ public class Lockpick_minigame : MiniGame
         round = 0;
         angle = 0f;
 
+        needle.pivot = new Vector2(0.5f, 0f);
+
         StartRound();
     }
 
@@ -36,10 +41,8 @@ public class Lockpick_minigame : MiniGame
     {
         //if (!active) return;
 
-        angle += needleSpeed * Time.unscaledDeltaTime;
-        angle %= 360f;
-
-        needle.localRotation = Quaternion.Euler(0, 0, -angle);
+        needleAngle = (needleAngle + needleSpeed * Time.unscaledDeltaTime) % 360f;
+        needle.localRotation = Quaternion.Euler(0f, 0f, -needleAngle);
 
         if (Input.GetKeyDown(KeyCode.Space))
             Check();
@@ -47,17 +50,49 @@ public class Lockpick_minigame : MiniGame
 
     void StartRound()
     {
-        arcSize = Mathf.Max(0.05f, startArcSize - round * arcShrink);
-        arcStart = Random.value;
+        float arcSize = Mathf.Max(0.05f, startArcSize - round * arcShrink);
 
-        successArc.fillAmount = arcSize;
-       
+        // Unity radial fill: success is UNFILLED portion
+        successArc.type = Image.Type.Filled;
+        successArc.fillMethod = Image.FillMethod.Radial360;
+        successArc.fillClockwise = true;
+
+        // 0 = Top, 1 = Right, 2 = Bottom, 3 = Left
+        successArc.fillOrigin = Random.Range(0, 4);
+
+        successArc.fillAmount = 1f - arcSize;
+        successArc.transform.localRotation = Quaternion.identity;
+
+        Debug.Log(
+            $"Round {round + 1} | " +
+            $"Origin {(successArc.fillOrigin * 90f):F0}° | " +
+            $"Success Size {(arcSize * 360f):F0}°"
+        );
     }
 
     void Check()
     {
-        float needlePos = angle / 360f;
-        bool success = InArc(needlePos);
+            // Normalize needle angle
+            // Needle rotates CLOCKWISE, so invert
+        float needleNorm = 1f - ((needleAngle % 360f) / 360f);
+
+        // Radial360 has 4 origins: 0=Top,1=Right,2=Bottom,3=Left
+        float originNorm = successArc.fillOrigin / 4f;
+
+        // Convert needle into fill-origin space
+        float relative = needleNorm - originNorm;
+        if (relative < 0f) relative += 1f;
+
+        // Filled = fail, Unfilled = success
+        bool success = relative > (successArc.fillAmount - forgiveness);
+
+        Debug.Log(
+            $"Needle {needleAngle:F1}° | " +
+            $"NeedleNorm {needleNorm:F3} | " +
+            $"Origin {originNorm:F3} | " +
+            $"Relative {relative:F3} | " +
+            $"FillAmount {successArc.fillAmount:F3} | SUCCESS {success}"
+        );
 
         if (success)
         {
@@ -73,16 +108,6 @@ public class Lockpick_minigame : MiniGame
         }
     }
 
-    bool InArc(float value)
-    {
-        float end = arcStart + arcSize;
-
-        if (end <= 1f)
-            return value >= arcStart && value <= end;
-
-        return value >= arcStart || value <= end - 1f;
-    }
-
     void Win()
     {
         RaiseSuccess();
@@ -92,6 +117,7 @@ public class Lockpick_minigame : MiniGame
 
     void Fail()
     {
+        Debug.Log("LOCKPICK FAILED");
         onCooldown = true;
         Invoke(nameof(ResetCooldown), failCooldown);
         RaiseFail();

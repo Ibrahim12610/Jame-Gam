@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f951dc688db3846b2a515b0a415f5614
+guid: 893d6244fa26d44189a97346fc1b31da
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2677709557159798212
-    second: needle_chirstmas_0
+      213: 4266831477799940668
+    second: christmas_panel_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: needle_chirstmas_0
+      name: christmas_panel_0
       rect:
         serializedVersion: 2
-        x: 39
-        y: 39
-        width: 2
-        height: 24
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 0
+        y: 0
+        width: 64
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4c5ad26b7a2292520800000000000000
-      internalID: 2677709557159798212
+      spriteID: c3278b65f94d63b30800000000000000
+      internalID: 4266831477799940668
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e7de130752b147159c5554bea955fa2
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      needle_chirstmas_0: 2677709557159798212
+      christmas_panel_0: 4266831477799940668
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
