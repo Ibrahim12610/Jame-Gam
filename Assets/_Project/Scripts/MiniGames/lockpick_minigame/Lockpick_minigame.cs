@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Lockpick_minigame : MonoBehaviour
+public class Lockpick_minigame : MiniGame
 {
    [Header("UI")]
     public GameObject canvas;
@@ -22,24 +22,16 @@ public class Lockpick_minigame : MonoBehaviour
 
     float needleAngle;   // 0–360 (0 = top)
     int round;
-    bool active;
+    float angle;
 
     public static bool onCooldown;
 
     void OnEnable()
     {
-        if (onCooldown)
-        {
-            gameObject.SetActive(false);
-            return;
-        }
-
-        Time.timeScale = 0f;
         canvas.SetActive(true);
 
         round = 0;
-        needleAngle = 0f;
-        active = true;
+        angle = 0f;
 
         needle.pivot = new Vector2(0.5f, 0f);
 
@@ -48,7 +40,7 @@ public class Lockpick_minigame : MonoBehaviour
 
     void Update()
     {
-        if (!active) return;
+        //if (!active) return;
 
         needleAngle = (needleAngle + needleSpeed * Time.unscaledDeltaTime) % 360f;
         needle.localRotation = Quaternion.Euler(0f, 0f, -needleAngle);
@@ -119,6 +111,7 @@ public class Lockpick_minigame : MonoBehaviour
 
     void Win()
     {
+        RaiseSuccess();
         Debug.Log("LOCKPICK SUCCESS");
         Close();
     }
@@ -128,14 +121,16 @@ public class Lockpick_minigame : MonoBehaviour
         Debug.Log("LOCKPICK FAILED");
         onCooldown = true;
         Invoke(nameof(ResetCooldown), failCooldown);
+        RaiseFail();
+        Debug.Log("LOCKPICK FAILED");
         Close();
     }
 
     void Close()
     {
-        active = false;
-        Time.timeScale = 1f;
+       
         canvas.SetActive(false);
+        Destroy(gameObject);
     }
 
     void ResetCooldown()

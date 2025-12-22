@@ -7,20 +7,24 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] public float moveSpeed;
     [SerializeField] float crouchSpeedMultiplier = 0.5f;
 
-    private Vector2 lastMoveDirection = Vector2.down;
+    private Vector2 _lastMoveDirection = Vector2.down;
     public bool isCrouching = false;
-    float originalMoveSpeed;
+    private float _originalMoveSpeed;
 
-    Rigidbody2D rb;
+    private Rigidbody2D rb;
+
+    [HideInInspector] public bool disableMovement = false;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        originalMoveSpeed = moveSpeed;
+        _originalMoveSpeed = moveSpeed;
     }
 
     void Update()
     {
+        if (disableMovement) return;
+        
         Vector2 moveVector = Vector2.zero;
 
         if (PlayerManager.Instance.IsInImpulse()) return;
@@ -36,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
 
         moveVector.Normalize();
 
-        float currentSpeed = isCrouching ? originalMoveSpeed * crouchSpeedMultiplier : originalMoveSpeed;
+        float currentSpeed = isCrouching ? _originalMoveSpeed * crouchSpeedMultiplier : _originalMoveSpeed;
         moveVector *= currentSpeed;
 
         rb.linearVelocity = moveVector;

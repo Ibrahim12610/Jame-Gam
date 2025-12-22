@@ -1,8 +1,5 @@
-using System;
 using System.Collections;
-using NUnit.Framework.Constraints;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class PlayerAttackController : MonoBehaviour
 {
@@ -15,12 +12,15 @@ public class PlayerAttackController : MonoBehaviour
     [SerializeField] private AudioClip attackSound;
     
     [HideInInspector] public bool isAttacking = false;
+    [HideInInspector] public bool disableAttack = false;
     
     private CircleCollider2D _directionalCollider;
     private AudioSource _audioSource;
     private Vector2 _moveInput;
     private Vector2 _facingDirection = Vector2.down;
     private PlayerAnimator _playerAnimator;
+    
+    
     
     private void Awake()
     {
@@ -32,6 +32,8 @@ public class PlayerAttackController : MonoBehaviour
 
     private void Update()
     {
+        if (disableAttack) return;
+        
         if (Input.GetKeyDown(KeyCode.Mouse0) && !isAttacking)
         {
             StopAllCoroutines();
@@ -70,10 +72,10 @@ public class PlayerAttackController : MonoBehaviour
         if (_directionalCollider == null)
             return;
 
-        Vector2 cardinalDir = GetCardinalDirection(_facingDirection);
+        Vector2 dir = _facingDirection.normalized;
         
-        _directionalCollider.offset = cardinalDir * colliderOffsetDistance;
-        impulseCollider.offset = cardinalDir * colliderOffsetDistance;
+        _directionalCollider.offset = dir * colliderOffsetDistance;
+        impulseCollider.offset = dir * colliderOffsetDistance;
     }
 
     private Vector2 GetCardinalDirection(Vector2 dir)

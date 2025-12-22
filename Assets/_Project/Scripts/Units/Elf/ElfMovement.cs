@@ -18,6 +18,7 @@ public class ElfMovement : MonoBehaviour
     private NavMeshAgent _agent;
     private AudioSource _audioSource;
     private Coroutine _fadeRoutine;
+    private ElfAnimator _animator;
     
     private int _currentPatrolIndex;
     private bool _isWaiting;
@@ -32,6 +33,7 @@ public class ElfMovement : MonoBehaviour
     {
         _agent = GetComponent<NavMeshAgent>();
         _audioSource = GetComponent<AudioSource>();
+        _animator = GetComponentInChildren<ElfAnimator>();
         _agent.updateRotation = false;
         _agent.updateUpAxis = false;
         _agent.autoRepath = false;
@@ -202,6 +204,7 @@ public class ElfMovement : MonoBehaviour
         if (!_agent.hasPath)
             SetNextPatrolPoint();
     }
+    
     
     private void StartNotifyAudio()
     {

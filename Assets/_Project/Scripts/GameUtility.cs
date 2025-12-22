@@ -21,4 +21,19 @@ public class GameUtility : MonoBehaviour
         source.Stop();
         source.volume = startVolume;
     }
+
+    public static void PauseMenuDisableLogic()
+    {
+        PlayerManager.Instance.DisablePlayerAttack();
+        PlayerManager.Instance.DisablePlayerMovement();
+        PlayerManager.Instance.DisablePlayerAnimator();
+    }
+    
+    public static void PauseMenuEnableLogic()
+    {
+        PlayerManager.Instance.EnablePlayerAttack();
+        PlayerManager.Instance.EnablePlayerMovement();
+        PlayerManager.Instance.EnablePlayerAnimator();
+    }
+    
 }

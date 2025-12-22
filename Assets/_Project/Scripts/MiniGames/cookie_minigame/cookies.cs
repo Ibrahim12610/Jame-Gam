@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -22,6 +23,7 @@ public class cookies : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragH
         rect.position = eventData.position;
     }
 
+    [Obsolete("Obsolete")]
     public void OnEndDrag(PointerEventData eventData)
     {
         if (RectTransformUtility.RectangleContainsScreenPoint(emptyJar, eventData.position))

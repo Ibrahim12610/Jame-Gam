@@ -32,6 +32,8 @@ public class PlayerAnimator : MonoBehaviour
     private const string State_crouch_front_walk = "crouch_front_walk";
     private const string State_crouch_back_walk = "crouch_back_walk";
 
+    public bool disableAnimator = false;
+
     private void Awake()
     {
         _animator = GetComponent<Animator>();
@@ -42,6 +44,8 @@ public class PlayerAnimator : MonoBehaviour
     }
     void Update()
     {
+        if (disableAnimator) return;
+        
         Vector2 moveVector = Vector2.zero;
 
         if (!_isAttacking)
@@ -67,12 +71,6 @@ public class PlayerAnimator : MonoBehaviour
         {
             _lastMoveDirection = forcedDirection.Value.normalized;
         }
-    }
-
-    void StartAttack()
-    {
-        _isAttacking = true;
-        _attackTimer = attackDuration;
     }
 
     void UpdateAttackTimer()
@@ -115,7 +113,6 @@ public class PlayerAnimator : MonoBehaviour
         {
             if (absY > absX)
             {
-                // Vertical
                 if (direction.y < 0)
                 {
                     return isMoving ? State_walk_forward : State_idle_forward;
@@ -127,7 +124,6 @@ public class PlayerAnimator : MonoBehaviour
             }
             else
             {
-                // Horizontal
                 return isMoving ? State_walk_side : State_idle_side;
             }
         }
@@ -135,7 +131,6 @@ public class PlayerAnimator : MonoBehaviour
         {
             if (absY > absX)
             {
-                // Vertical
                 if (direction.y < 0)
                 {
                     return isMoving ? State_crouch_front_walk : State_crouch_front;
@@ -147,7 +142,6 @@ public class PlayerAnimator : MonoBehaviour
             }
             else
             {
-                // Horizontal
                 return isMoving ? State_crouch_side_walk : State_crouch_side;
             }
         }
@@ -173,9 +167,6 @@ public class PlayerAnimator : MonoBehaviour
     {
         if (_spriteRenderer == null) return;
 
-        // if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
-        // {
         _spriteRenderer.flipX = direction.x < 0;
-        // }
     }
 }

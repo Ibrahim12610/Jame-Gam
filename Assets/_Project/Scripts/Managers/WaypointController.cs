@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class WaypointController : MonoBehaviour
 {
-    [SerializeField] private Transform waypointTarget;
-    [SerializeField] private GameObject waypoint;
-    [SerializeField] private float edgePadding = 50f;
     [SerializeField] private GameObject waypointPanel;
+    [SerializeField] private Transform waypointTarget;
+    [SerializeField] private GameObject waypointArrow;
+    [SerializeField] private float edgePadding = 50f;
 
     private void Update()
     {
@@ -14,12 +14,12 @@ public class WaypointController : MonoBehaviour
 
         if (IsWithinScreen(targetScreenPos))
         {
-            waypoint.SetActive(false);
+            waypointPanel.SetActive(false);
         }
         else
         {
             HandleOffScreen(targetScreenPos);
-            waypoint.SetActive(true);
+            waypointPanel.SetActive(true);
         }
     }
 
@@ -34,11 +34,11 @@ public class WaypointController : MonoBehaviour
     private void HandleOffScreen(Vector3 screenPos)
     {
         Vector3 clampedScreenPos = ClampToScreenEdges(screenPos);
-
-        waypointPanel.transform.SetPositionAndRotation(
-            clampedScreenPos,
-            CalculateRotationTowards(screenPos, clampedScreenPos)
-        );
+        
+        waypointPanel.transform.position = clampedScreenPos;
+        
+        waypointArrow.transform.rotation =
+            CalculateRotationTowards(screenPos, clampedScreenPos);
     }
 
     private Vector3 ClampToScreenEdges(Vector3 screenPos)
@@ -49,11 +49,14 @@ public class WaypointController : MonoBehaviour
             screenPos.z
         );
     }
+    
 
     private Quaternion CalculateRotationTowards(Vector3 targetPos, Vector3 waypointPos)
     {
-        Vector2 direction = (waypointPos - targetPos).normalized;
-        float angle = Mathf.Atan2(-direction.x, direction.y) * Mathf.Rad2Deg;
-        return Quaternion.Euler(0, 0, angle);
+        Vector2 direction = (targetPos - waypointPos).normalized;
+
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+        return Quaternion.Euler(0, 0, angle - 90f);
     }
 }

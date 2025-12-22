@@ -7,6 +7,7 @@ public class SceneChangeManager : MonoBehaviour
     public static SceneChangeManager Instance { get; private set; }
     
     [SerializeField] private float sceneFadeDuration;
+    [SerializeField] private float fadeDuration;
     private SceneFade _sceneFade;
 
     private void Awake()
@@ -35,8 +36,10 @@ public class SceneChangeManager : MonoBehaviour
         Debug.Log("Next Scene Change Starting");
         yield return StartCoroutine(_sceneFade.FadeOutCoroutine(sceneFadeDuration));
 
+        yield return new WaitForSeconds(fadeDuration);
+        
         Debug.Log($"Loading next additive scene: {sceneToLoad}");
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneToLoad, LoadSceneMode.Single);
+        SceneManager.LoadScene(sceneToLoad, LoadSceneMode.Single);
 
         yield return StartCoroutine(_sceneFade.FadeInCoroutine(sceneFadeDuration));
 

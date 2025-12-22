@@ -15,15 +15,24 @@ public class PauseMenuController : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Escape))
         {
-            Time.timeScale = 0;
-            pauseMenu.SetActive(true);
+            OnPauseMenuActive();
         }
+    }
+
+    private void OnPauseMenuActive()
+    {
+        Time.timeScale = 0;
+        pauseMenu.SetActive(true);
+
+        GameUtility.PauseMenuDisableLogic();
     }
 
     public void OnResumeButtonClicked()
     {
         Time.timeScale = 1;
         pauseMenu.SetActive(false);
+        
+        GameUtility.PauseMenuEnableLogic();
     }
     
     public void OnRestartButtonClicked()
