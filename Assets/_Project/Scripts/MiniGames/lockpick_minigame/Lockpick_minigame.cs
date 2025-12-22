@@ -22,6 +22,7 @@ public class Lockpick_minigame : MiniGame
 
     float needleAngle;   // 0–360 (0 = top)
     int round;
+    float angle;
 
     public static bool onCooldown;
 
