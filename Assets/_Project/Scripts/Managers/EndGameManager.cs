@@ -36,7 +36,9 @@ public class EndGameManager : MonoBehaviour
     private void HandleEndGameActivation()
     {
         ActivateEndGameSequence?.Invoke();
-        otherBackGroundMusic.Stop(); // TODO: Fade Later
+        if(otherBackGroundMusic)
+            otherBackGroundMusic.Stop(); // TODO: Fade Later
+        
         _endGameMusic.Play();
     }
     
