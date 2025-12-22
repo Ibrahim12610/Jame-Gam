@@ -475,6 +475,7 @@ GameObject:
   - component: {fileID: 5422880938408463588}
   - component: {fileID: 6177285037129994832}
   - component: {fileID: 9148770506597228699}
+  - component: {fileID: 6851845689882082744}
   m_Layer: 0
   m_Name: Panel
   m_TagString: Untagged
@@ -545,6 +546,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6851845689882082744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7763347069057764833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2028d10d713d552409d326f92662fc13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScaleOnEnable
 --- !u!1 &7780584657321459845
 GameObject:
   m_ObjectHideFlags: 0

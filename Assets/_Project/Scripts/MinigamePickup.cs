@@ -39,18 +39,10 @@ public class MinigamePickup : MonoBehaviour
     private void HandleMiniGameStart()
     {
         Debug.Log("Spawning minigame");
-        GameUtility.PauseMenuDisableLogic();
+        GameUtility.PauseMenuDisableLogic("PopUp");
 
         var go = Instantiate(minigameCanvas);
         _currentGame = go.GetComponent<MiniGame>();
-
-        if (_currentGame == null)
-        {
-            Debug.LogError("Minigame prefab is missing MiniGame component!");
-            Destroy(go);
-            GameUtility.PauseMenuEnableLogic();
-            return;
-        }
 
         _currentGame.OnMiniGameSuccess += HandleMiniGameSuccess;
         _currentGame.OnMiniGameFail += HandleMiniGameFail;
@@ -78,7 +70,7 @@ public class MinigamePickup : MonoBehaviour
     {
         CleanupSubscriptions();
         HandeAudio(minigameSuccessClip);
-        GameUtility.PauseMenuEnableLogic();
+        GameUtility.PauseMenuEnableLogic("PopUp");
         MiniGameManager.Instance.OnMiniGameComplete(1);
         Destroy(gameObject);
     }
@@ -87,7 +79,7 @@ public class MinigamePickup : MonoBehaviour
     {
         HandeAudio(minigameFailClip);
         CleanupSubscriptions();
-        GameUtility.PauseMenuEnableLogic();
+        GameUtility.PauseMenuEnableLogic("PopUp");
     }
     
     private void OnDestroy()
