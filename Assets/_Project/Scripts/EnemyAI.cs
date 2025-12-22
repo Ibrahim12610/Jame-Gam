@@ -1,15 +1,24 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
 {
-    //Components
+    [Header("Components")]
+    public Transform[] taskPatrolPoints;
     [HideInInspector] public MonoBehaviour monoBehaviour;
     [HideInInspector] public NavMeshAgent agent;
+    [HideInInspector] public PlayerManager player;
     Animator animator;
 
-    public PlayerManager player;
+    [Header("Move Settings")]
+    public float walkSpeed;
+    public float chaseSpeed;
+    [Tooltip("Each time santa picks a new patrol " +
+        "point this is the probability he will pick a task point")]
+    public float chanceToPatrolTask = .1f;
+    public float chancePerSecondToObserve = .1f;
 
     [Header("Sight Settings")]
     [SerializeField] int rays;
@@ -18,7 +27,8 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] float angle;
     [SerializeField] bool debugShowSight;
 
-    [HideInInspector] public Stack<SoundSignal> soundStack;
+
+    public List<SoundSignal> soundStack;
     [HideInInspector] public bool canSeePlayer = false;
 
     float rotationAngle;
@@ -34,15 +44,46 @@ public class EnemyAI : MonoBehaviour
     private void Start()
     {
         player = PlayerManager.Instance;
+        soundStack = new List<SoundSignal>();
+        //StartCoroutine(ObserveRoutine());
     }
     private void Update()
     {
         canSeePlayer = CanSeeLayer(LayerMask.NameToLayer("Player"));
         animator.SetBool("canSeePlayer", canSeePlayer);
     }
-    void HearSound(SoundSignal sound)
+    //-----Sound stack stuff-----
+    public void PushSound(SoundSignal signal)
     {
-        soundQueue.Push(sound);
+        soundStack.Add(signal);
+
+        // Sort: highest priority first, newest first
+        soundStack.Sort((a, b) =>
+        {
+            int p = b.type.priority.CompareTo(a.type.priority);
+            if (p != 0) return p;
+            return b.timeStamp.CompareTo(a.timeStamp);
+        });
+    }
+    public void ClearSoundsOfType(SoundType.SoundName name)
+    {
+        soundStack.RemoveAll(s => s.type.name == name);
+    }
+    // end of sound stack stuff
+    IEnumerator ObserveRoutine()
+    {
+        //WORK IN PROGRESS
+        while (true)
+        {
+            yield return new WaitForSeconds(1);
+            if (animator.GetCurrentAnimatorStateInfo(1).IsTag("Patrol"))
+                Debug.Log("ASDD");
+        }
+    }
+    public void HearSound(SoundSignal sound)
+    {
+        if (Vector2.Distance(transform.position, sound.originalPos) <= sound.type.travelDistance)
+            PushSound(sound);
     }
     bool CanSeeLayer(LayerMask layer)
     {
@@ -91,6 +132,8 @@ public class EnemyAI : MonoBehaviour
     /// </summary>
     public void PointTowardsCartesian(Vector2 direction)
     {
+        if (direction == Vector2.zero)
+            return;
         direction.Normalize();
 
         if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
@@ -133,12 +176,44 @@ public class EnemyAI : MonoBehaviour
         // If none of the above conditions are met, the agent is actively moving
         return true;
     }
+    public bool IsPathValid(Vector2 targetPos)
+    {
+        if (!IsPositionWalkable(targetPos))
+            return false;
+
+        NavMeshPath path = new NavMeshPath();
+        agent.CalculatePath(targetPos, path);
+        if (path.status != NavMeshPathStatus.PathComplete)
+            return false;
+        return true;
+    }
+    bool IsPositionWalkable(Vector2 position)
+    {
+        if (!NavMesh.SamplePosition(position, out NavMeshHit hit, 0.75f, NavMesh.AllAreas))
+            return true;
+
+        int notWalkableArea = NavMesh.GetAreaFromName("Not Walkable");
+
+        // If area doesn't exist, treat everything as walkable
+        if (notWalkableArea == -1)
+            return false;
+
+        bool isNotWalkable = (hit.mask & (1 << notWalkableArea)) != 0;
+        return isNotWalkable;
+    }
 }
-public struct SoundSignal
+public class SoundSignal
 {
     public SoundType type;
     public Vector2 originalPos;
     public float timeStamp;
+
+    public SoundSignal(SoundType type, Vector2 originalPos, float timeStamp)
+    {
+        this.type = type;
+        this.originalPos = originalPos;
+        this.timeStamp = timeStamp;
+    }
 }
 public struct SoundType
 {
@@ -146,13 +221,16 @@ public struct SoundType
     public float travelDistance;
     public float blurRadius; //The range where enemies will check where this sound occured
     public float lifeTime; //The time until this sound is declared stale and discarded
+    public int priority;
 
-    public SoundType(SoundName name, float travelDistance, float blurRadius, float lifeTime)
+    public SoundType
+        (SoundName name, float travelDistance, float blurRadius, float lifeTime, int priority)
     {
         this.name = name;
         this.travelDistance = travelDistance;
         this.blurRadius = blurRadius;
         this.lifeTime = lifeTime;
+        this.priority = priority;
     }
 
     public enum SoundName
@@ -161,13 +239,11 @@ public struct SoundType
         Task
         //ADD MORE SOUNDS HERE
     }
-}
-public static class SoundTypes
-{
+
     public static readonly SoundType Footstep =
-        new SoundType(SoundType.SoundName.Footstep, 5f, 1f, 1.5f);
+        new SoundType(SoundName.Footstep, 4.5f, 1f, .5f, 1);
 
     public static readonly SoundType Task =
-        new SoundType(SoundType.SoundName.Task, 12f, 2.5f, 5f);
+        new SoundType(SoundName.Task, 12f, 12f, 5f, 2);
     //ADD MORE SOUNDS HERE
 }
