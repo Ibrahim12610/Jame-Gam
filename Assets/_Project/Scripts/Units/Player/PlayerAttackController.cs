@@ -1,8 +1,5 @@
-using System;
 using System.Collections;
-using NUnit.Framework.Constraints;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class PlayerAttackController : MonoBehaviour
 {
@@ -75,10 +72,10 @@ public class PlayerAttackController : MonoBehaviour
         if (_directionalCollider == null)
             return;
 
-        Vector2 cardinalDir = GetCardinalDirection(_facingDirection);
+        Vector2 dir = _facingDirection.normalized;
         
-        _directionalCollider.offset = cardinalDir * colliderOffsetDistance;
-        impulseCollider.offset = cardinalDir * colliderOffsetDistance;
+        _directionalCollider.offset = dir * colliderOffsetDistance;
+        impulseCollider.offset = dir * colliderOffsetDistance;
     }
 
     private Vector2 GetCardinalDirection(Vector2 dir)
