@@ -16,9 +16,10 @@ public class PlayerAttackController : MonoBehaviour
     
     private CircleCollider2D _directionalCollider;
     private AudioSource _audioSource;
+    private PlayerAnimator _playerAnimator;
+    private PlayerMovement _playerMovement;
     private Vector2 _moveInput;
     private Vector2 _facingDirection = Vector2.down;
-    private PlayerAnimator _playerAnimator;
     
     
     
@@ -28,6 +29,7 @@ public class PlayerAttackController : MonoBehaviour
         _directionalCollider = attackPoint.GetComponent<CircleCollider2D>();
         _audioSource = GetComponent<AudioSource>();
         _playerAnimator = GetComponentInParent<PlayerAnimator>();
+        _playerMovement =  GetComponentInParent<PlayerMovement>();
     }
 
     private void Update()
@@ -40,6 +42,7 @@ public class PlayerAttackController : MonoBehaviour
             isAttacking = true;
             _audioSource.PlayOneShot(attackSound);
             _playerAnimator.TriggerAttack();
+            _playerMovement.disableMovement = true;
             StartCoroutine(HandleAttackPointActivation());
         }
 
@@ -65,6 +68,7 @@ public class PlayerAttackController : MonoBehaviour
 
         attackPoint.SetActive(false);
         isAttacking = false;
+        _playerMovement.disableMovement = false;
     }
     
     private void UpdateDirectionalCollider()

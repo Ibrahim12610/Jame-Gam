@@ -213,17 +213,21 @@ public class ElfMovement : MonoBehaviour
             StopCoroutine(_fadeRoutine);
             _fadeRoutine = null;
         }
-
-        _audioSource.volume = 1f;
+        
+        _audioSource.Stop();
         _audioSource.clip = notifySound;
         _audioSource.loop = true;
+        _audioSource.volume = 0.3f;
+        _audioSource.time = 0f;
 
-        if (!_audioSource.isPlaying)
-            _audioSource.Play();
+        _audioSource.Play();
     }
 
     private void StopNotifyAudio()
     {
+        if (_fadeRoutine != null)
+            StopCoroutine(_fadeRoutine);
+
         if (_audioSource.isPlaying)
         {
             _fadeRoutine = StartCoroutine(

@@ -46,10 +46,10 @@ CircleCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 63
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -67,8 +67,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.6109284}
-  m_Radius: 1.1661516
+  m_Offset: {x: 0, y: -0.3909136}
+  m_Radius: 0.94613683
 --- !u!114 &3938718050153427056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,10 +148,10 @@ AudioSource:
   m_GameObject: {fileID: 1697521767852579597}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 9059154813049869144, guid: 5583af8a36d164b4298715570897dd8b, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -621,7 +621,7 @@ Transform:
   m_GameObject: {fileID: 4033428941179096859}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -802,7 +802,7 @@ Transform:
   m_GameObject: {fileID: 7817461446417057646}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.03, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -822,10 +822,10 @@ CircleCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 63
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -843,8 +843,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.6109284}
-  m_Radius: 1.1661516
+  m_Offset: {x: 0, y: -0.3909136}
+  m_Radius: 0.94613683
 --- !u!114 &8753995789443090089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -857,7 +857,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a5f3b8f98c87674190881753af51920, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  damageAmount: 15
+  damageAmount: 34
   impulseSource: {fileID: 790151368263913613}
 --- !u!1 &8886284471523678098
 GameObject:
@@ -1001,5 +1001,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b31588eb777d82479638be7b08221fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  walkClip: {fileID: 8300000, guid: 660d7c06839efa948bff42af47701332, type: 3}
+  walkClip: {fileID: 8300000, guid: ac1f9d6b2590c2742ad317eff69dce5a, type: 3}
   crouchClip: {fileID: 0}
