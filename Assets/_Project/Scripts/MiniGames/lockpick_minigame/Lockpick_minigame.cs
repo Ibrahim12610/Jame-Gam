@@ -19,7 +19,6 @@ public class Lockpick_minigame : MiniGame
     float arcStart;
     float arcSize;
     int round;
-    bool active;
 
     public static bool onCooldown;
 
@@ -29,7 +28,6 @@ public class Lockpick_minigame : MiniGame
 
         round = 0;
         angle = 0f;
-        active = true;
 
         StartRound();
     }
@@ -103,7 +101,6 @@ public class Lockpick_minigame : MiniGame
 
     void Close()
     {
-        active = false;
        
         canvas.SetActive(false);
         Destroy(gameObject);

@@ -1,0 +1,1144 @@
+fileFormatVersion: 2
+guid: dae0f2ceed221034f8b4a6a58d1e25dd
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4887482252745956374
+    second: ElfChibi_0
+  - first:
+      213: 7658753031384919434
+    second: ElfChibi_1
+  - first:
+      213: -7392809287827812424
+    second: ElfChibi_2
+  - first:
+      213: -5167278475527604661
+    second: ElfChibi_3
+  - first:
+      213: 6635847862423257452
+    second: ElfChibi_4
+  - first:
+      213: 1375908536597272364
+    second: ElfChibi_5
+  - first:
+      213: 1056078273342987608
+    second: ElfChibi_6
+  - first:
+      213: 5076010933852101422
+    second: ElfChibi_7
+  - first:
+      213: 6383577743894404872
+    second: ElfChibi_8
+  - first:
+      213: 1617238043816641070
+    second: ElfChibi_9
+  - first:
+      213: 6779146236347050364
+    second: ElfChibi_10
+  - first:
+      213: -2270397768056095205
+    second: ElfChibi_11
+  - first:
+      213: -7269666112112923910
+    second: ElfChibi_12
+  - first:
+      213: 1580202284782452302
+    second: ElfChibi_13
+  - first:
+      213: 6581490165545233899
+    second: ElfChibi_14
+  - first:
+      213: -3059586820649755341
+    second: ElfChibi_15
+  - first:
+      213: 7233863696412554476
+    second: ElfChibi_16
+  - first:
+      213: -613444835647431196
+    second: ElfChibi_17
+  - first:
+      213: -1528139556260543662
+    second: ElfChibi_18
+  - first:
+      213: -6889701524734718494
+    second: ElfChibi_19
+  - first:
+      213: -211069388604116979
+    second: ElfChibi_20
+  - first:
+      213: -2751817481095254502
+    second: ElfChibi_21
+  - first:
+      213: -6835324885168246048
+    second: ElfChibi_22
+  - first:
+      213: -7186861297220705916
+    second: ElfChibi_23
+  - first:
+      213: -7443518942200618927
+    second: ElfChibi_24
+  - first:
+      213: -9205579705354847414
+    second: ElfChibi_25
+  - first:
+      213: 4579987940304982609
+    second: ElfChibi_26
+  - first:
+      213: 7934449779106087680
+    second: ElfChibi_27
+  - first:
+      213: 1154218397223995435
+    second: ElfChibi_28
+  - first:
+      213: -7534812617892460006
+    second: ElfChibi_29
+  - first:
+      213: -8668521585158739681
+    second: ElfChibi_30
+  - first:
+      213: 951228358631972171
+    second: ElfChibi_31
+  - first:
+      213: 303684951832648633
+    second: ElfChibi_32
+  - first:
+      213: 67507160637331154
+    second: ElfChibi_33
+  - first:
+      213: -7739650086538911208
+    second: ElfChibi_34
+  - first:
+      213: -8643787387281834875
+    second: ElfChibi_35
+  - first:
+      213: 6409722164049277482
+    second: ElfChibi_36
+  - first:
+      213: -1143118126350764079
+    second: ElfChibi_37
+  - first:
+      213: 7507195879520655478
+    second: ElfChibi_38
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ElfChibi_0
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 153
+        width: 20
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae32d0f39cc2c2cb0800000000000000
+      internalID: -4887482252745956374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfChibi_1
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 153
+        width: 20
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8de422ed4b594a60800000000000000
+      internalID: 7658753031384919434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfChibi_2
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 153
+        width: 20
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bf80da1f17776990800000000000000
+      internalID: -7392809287827812424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfChibi_3
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 153
+        width: 20
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b46b7aa9a932a48b0800000000000000
+      internalID: -5167278475527604661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfChibi_4
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 153
+        width: 22
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c61064ff874471c50800000000000000
+      internalID: 6635847862423257452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfChibi_5
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 153
+        width: 20
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c27de4f2685381310800000000000000
+      internalID: 1375908536597272364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfChibi_6
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 153
+        width: 20
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85ddd912891f7ae00800000000000000
+      internalID: 1056078273342987608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfChibi_7
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 153
+        width: 20
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2bd04cec0d917640800000000000000
+      internalID: 5076010933852101422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfChibi_8
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 153
+        width: 20
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80f5aece226079850800000000000000
+      internalID: 6383577743894404872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfChibi_9
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 153
+        width: 20
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2240feae65917610800000000000000
+      internalID: 1617238043816641070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfChibi_10
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 105
+        width: 20
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7964e1a59d541e50800000000000000
+      internalID: 6779146236347050364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfChibi_11
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 105
+        width: 20
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1e3d20524ded70e0800000000000000
+      internalID: -2270397768056095205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfChibi_12
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 105
+        width: 20
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afa60d7ff25fc1b90800000000000000
+      internalID: -7269666112112923910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfChibi_13
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 105
+        width: 20
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4ef7b11b910ee510800000000000000
+      internalID: 1580202284782452302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfChibi_14
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 105
+        width: 20
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bedec027f66265b50800000000000000
+      internalID: 6581490165545233899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfChibi_15
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 105
+        width: 20
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33d54bb3ff92a85d0800000000000000
+      internalID: -3059586820649755341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfChibi_16
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 105
+        width: 20
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce4b34a84b8d36460800000000000000
+      internalID: 7233863696412554476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfChibi_17
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 105
+        width: 22
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4eddfe11c2b9c77f0800000000000000
+      internalID: -613444835647431196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfChibi_18
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 105
+        width: 20
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2530ed58b25facae0800000000000000
+      internalID: -1528139556260543662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfChibi_19
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 105
+        width: 20
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ed48b967fcd260a0800000000000000
+      internalID: -6889701524734718494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfChibi_20
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 57
+        width: 20
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d00fa456281221df0800000000000000
+      internalID: -211069388604116979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfChibi_21
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 57
+        width: 20
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1e6b98a4949fc9d0800000000000000
+      internalID: -2751817481095254502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfChibi_22
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 57
+        width: 20
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e2b8276b3c0421a0800000000000000
+      internalID: -6835324885168246048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfChibi_23
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 57
+        width: 20
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48128215ab3234c90800000000000000
+      internalID: -7186861297220705916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfChibi_24
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 57
+        width: 20
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 150ad33a5fe43b890800000000000000
+      internalID: -7443518942200618927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfChibi_25
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 57
+        width: 20
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4b77cef7063f3080800000000000000
+      internalID: -9205579705354847414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfChibi_26
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 57
+        width: 21
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 152937114c26f8f30800000000000000
+      internalID: 4579987940304982609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfChibi_27
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 57
+        width: 21
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0038bcb1904dc1e60800000000000000
+      internalID: 7934449779106087680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfChibi_28
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 57
+        width: 21
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b28c1c7548b940010800000000000000
+      internalID: 1154218397223995435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfChibi_29
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 57
+        width: 21
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1a836d58d7fe6790800000000000000
+      internalID: -7534812617892460006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfChibi_30
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 9
+        width: 21
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f19aecccb8933b780800000000000000
+      internalID: -8668521585158739681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfChibi_31
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 9
+        width: 21
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4d59800721733d00800000000000000
+      internalID: 951228358631972171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfChibi_32
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 9
+        width: 21
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bbdd9dcad7e63400800000000000000
+      internalID: 303684951832648633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfChibi_33
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 9
+        width: 21
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d65599a765dfe000800000000000000
+      internalID: 67507160637331154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfChibi_34
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 9
+        width: 21
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 812e602b04d379490800000000000000
+      internalID: -7739650086538911208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfChibi_35
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 9
+        width: 21
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58c70130b291b0880800000000000000
+      internalID: -8643787387281834875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfChibi_36
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 9
+        width: 21
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a22fa191958e3f850800000000000000
+      internalID: 6409722164049277482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfChibi_37
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 9
+        width: 21
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d77d8ede14d220f0800000000000000
+      internalID: -1143118126350764079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElfChibi_38
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 9
+        width: 21
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 678da1aa0eaee2860800000000000000
+      internalID: 7507195879520655478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      ElfChibi_0: -4887482252745956374
+      ElfChibi_1: 7658753031384919434
+      ElfChibi_10: 6779146236347050364
+      ElfChibi_11: -2270397768056095205
+      ElfChibi_12: -7269666112112923910
+      ElfChibi_13: 1580202284782452302
+      ElfChibi_14: 6581490165545233899
+      ElfChibi_15: -3059586820649755341
+      ElfChibi_16: 7233863696412554476
+      ElfChibi_17: -613444835647431196
+      ElfChibi_18: -1528139556260543662
+      ElfChibi_19: -6889701524734718494
+      ElfChibi_2: -7392809287827812424
+      ElfChibi_20: -211069388604116979
+      ElfChibi_21: -2751817481095254502
+      ElfChibi_22: -6835324885168246048
+      ElfChibi_23: -7186861297220705916
+      ElfChibi_24: -7443518942200618927
+      ElfChibi_25: -9205579705354847414
+      ElfChibi_26: 4579987940304982609
+      ElfChibi_27: 7934449779106087680
+      ElfChibi_28: 1154218397223995435
+      ElfChibi_29: -7534812617892460006
+      ElfChibi_3: -5167278475527604661
+      ElfChibi_30: -8668521585158739681
+      ElfChibi_31: 951228358631972171
+      ElfChibi_32: 303684951832648633
+      ElfChibi_33: 67507160637331154
+      ElfChibi_34: -7739650086538911208
+      ElfChibi_35: -8643787387281834875
+      ElfChibi_36: 6409722164049277482
+      ElfChibi_37: -1143118126350764079
+      ElfChibi_38: 7507195879520655478
+      ElfChibi_4: 6635847862423257452
+      ElfChibi_5: 1375908536597272364
+      ElfChibi_6: 1056078273342987608
+      ElfChibi_7: 5076010933852101422
+      ElfChibi_8: 6383577743894404872
+      ElfChibi_9: 1617238043816641070
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
