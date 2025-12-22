@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class MinigamePickup : MonoBehaviour
@@ -8,18 +9,13 @@ public class MinigamePickup : MonoBehaviour
     private bool _playerInside = false;
     private MiniGame _currentGame;
     
-    private void HandleMiniGameSuccess()
+
+    private void Update()
     {
-        CleanupSubscriptions();
-        GameUtility.PauseMenuEnableLogic();
-        MiniGameManager.Instance.OnMiniGameComplete(1);
-        Destroy(gameObject);
-    }
-    
-    private void HandleMiniGameFail()
-    {
-        CleanupSubscriptions();
-        GameUtility.PauseMenuEnableLogic();
+        if (Input.GetKeyDown(KeyCode.E) && _playerInside && _currentGame == null)
+        {
+            HandleMiniGameStart();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D otherCollider)
@@ -28,8 +24,12 @@ public class MinigamePickup : MonoBehaviour
         if (_playerInside) return;
 
         _playerInside = true;
-
-        HandleMiniGameStart();
+    }
+    
+    private void OnTriggerExit2D(Collider2D otherCollider)
+    {
+        if(!otherCollider.CompareTag("Player")) return;
+        _playerInside = false;
     }
 
     private void HandleMiniGameStart()
@@ -60,15 +60,24 @@ public class MinigamePickup : MonoBehaviour
         _currentGame.OnMiniGameFail -= HandleMiniGameFail;
         _currentGame = null;
     }
-
+    
+    
+    private void HandleMiniGameSuccess()
+    {
+        CleanupSubscriptions();
+        GameUtility.PauseMenuEnableLogic();
+        MiniGameManager.Instance.OnMiniGameComplete(1);
+        Destroy(gameObject);
+    }
+    
+    private void HandleMiniGameFail()
+    {
+        CleanupSubscriptions();
+        GameUtility.PauseMenuEnableLogic();
+    }
+    
     private void OnDestroy()
     {
         CleanupSubscriptions();
-    }
-    
-    private void OnTriggerExit2D(Collider2D otherCollider)
-    {
-        if(!otherCollider.CompareTag("Player")) return;
-        _playerInside = false;
     }
 }
