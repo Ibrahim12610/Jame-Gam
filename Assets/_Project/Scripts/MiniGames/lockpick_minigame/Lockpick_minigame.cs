@@ -18,8 +18,6 @@ public class Lockpick_minigame : MiniGame
     [Header("Feel")]
     [SerializeField] private float forgiveness = 0.02f;
 
-    public Action<bool> OnComplete;
-
     float needleAngle;
     int currentRound;
     bool active;
@@ -134,9 +132,9 @@ public class Lockpick_minigame : MiniGame
         {
             canvas.SetActive(false);
         }
-        Destroy(gameObject);
         
-        Complete(true);
+        RaiseSuccess();
+        Destroy(gameObject);
     }
 
     void Fail()
@@ -148,15 +146,9 @@ public class Lockpick_minigame : MiniGame
         {
             canvas.SetActive(false);
         }
-        Destroy(gameObject);
+        RaiseFail();
         
-        Complete(false);
+        Destroy(gameObject);
     }
-
-    void Complete(bool success)
-    {
-        active = false;
-
-        OnComplete?.Invoke(success);
-    }
+    
 }

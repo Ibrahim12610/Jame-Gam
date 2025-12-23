@@ -9,7 +9,7 @@ public class MainMenuController : MonoBehaviour
     {
         if (_hasClicked) return;
         _hasClicked = true;
-        SceneChangeManager.Instance.LoadNextStage("FinalizedMap2");
+        SceneChangeManager.Instance.LoadNextStage("PreScreenScene");
     }
 
     public void OnExitButtonClicked()
