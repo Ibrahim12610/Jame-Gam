@@ -23,8 +23,13 @@ public class DestroyController : MonoBehaviour
             StopCoroutine(_fadeRoutine);
 
         StopNotifyAudio();
-        healthCollider.SetActive(false);
-        impulseCollider.SetActive(false);
+        
+        if(healthCollider != null)
+            healthCollider.SetActive(false);
+        
+        if(impulseCollider != null)
+            impulseCollider.SetActive(false);
+        
         _fadeRoutine = StartCoroutine(FadeAndDestroy());
     }
 

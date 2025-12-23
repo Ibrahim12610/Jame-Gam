@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -7,12 +8,16 @@ public class PlayerManager : MonoBehaviour
     
     private ImpulseController _impulseController;
     private PlayerAttackController _playerAttackController;
-    private PlayerMovement _playerMovement;
+    public PlayerMovement _playerMovement;
     private PlayerAnimator _playerAnimator;
     
     private bool _pauseMenuActive = false;
     private bool _popUpActive = false;
 
+    [HideInInspector] public EnemyAI[] soundListeners;
+
+    public UnityEvent onKillSequence;
+    
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -28,7 +33,11 @@ public class PlayerManager : MonoBehaviour
         _playerMovement = GetComponent<PlayerMovement>();
         _playerAnimator = GetComponent<PlayerAnimator>();
     }
-
+    private void Start()
+    {
+        FindSoundListenersInScene();
+    }
+    
     public void SetPlayerTransform(Transform t)
     {
         transform.position = t.position;
@@ -42,6 +51,12 @@ public class PlayerManager : MonoBehaviour
     public Transform GetPlayerTransform()
     {
         return gameObject.transform;
+    }
+    
+    //RUN THIS WHEN THE GAME BEGINS
+    public void FindSoundListenersInScene()
+    {
+        soundListeners = FindObjectsByType<EnemyAI>(FindObjectsSortMode.None);
     }
     
     public bool IsInImpulse() => _impulseController.IsInImpulse();
@@ -67,5 +82,10 @@ public class PlayerManager : MonoBehaviour
             _playerMovement.disableMovement = false;
             _playerAnimator.disableAnimator = false;
         }
+    }
+
+    public void HandleonKillSequence()
+    {
+        onKillSequence.Invoke();
     }
 }
