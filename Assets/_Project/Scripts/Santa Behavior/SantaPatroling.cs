@@ -1,5 +1,7 @@
+using System;
 using UnityEngine;
 using UnityEngine.AI;
+using Random = UnityEngine.Random;
 
 public class SantaPatroling : StateMachineBehaviour
 {
@@ -7,6 +9,24 @@ public class SantaPatroling : StateMachineBehaviour
     EnemyAI ai;
 
     Vector3 target;
+    private bool headToBells = false;
+    private Vector2 _bellPoint;
+
+    private void OnEnable()
+    {
+        ElfDetectionController.ElfDetectedEvent += HandleBellEvent;
+    }
+    
+    private void OnDisable()
+    {
+        ElfDetectionController.ElfDetectedEvent -= HandleBellEvent;
+    }
+    
+    void HandleBellEvent(bool currentCondition, Vector2 bellPoint)
+    {
+        headToBells = currentCondition;
+        _bellPoint = bellPoint;
+    }
 
     override public void OnStateEnter
         (Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -22,6 +42,10 @@ public class SantaPatroling : StateMachineBehaviour
     {
         ai.PointTowardsCartesian(ai.agent.velocity);
 
+        if (headToBells)
+        {
+            ai.agent.SetDestination(_bellPoint);
+        }
         if (!ai.IsAgentMoving())
             DecideNewPoint();
     }
@@ -34,15 +58,26 @@ public class SantaPatroling : StateMachineBehaviour
     }
     void FindRandomTaskPoint()
     {
-        if (ai.taskPatrolPoints.Length == 0)
+        int attempts = 0;
+        int maxAttempts = ai.taskPatrolPoints.Length;
+        Transform selectedTransform = null;
+
+        while (selectedTransform == null && attempts < maxAttempts)
         {
+            int index = Random.Range(0, ai.taskPatrolPoints.Length);
+            selectedTransform = ai.taskPatrolPoints[index];
+            attempts++;
+        }
+
+        // If no valid transform found, fall back to random walkable point
+        if (selectedTransform == null)
+        {
+            Debug.LogWarning("All task patrol points have been destroyed, using random walkable point");
             FindRandomWalkablePoint();
-            Debug.LogError("No Task Patrol Points");
             return;
         }
-        Debug.Log("Checking Task");
-        int selectedTransform = Random.Range(0, ai.taskPatrolPoints.Length);
-        Vector2 point = ai.taskPatrolPoints[selectedTransform].position;
+
+        Vector2 point = selectedTransform.position;
         target = point;
         ai.agent.SetDestination(target);
     }

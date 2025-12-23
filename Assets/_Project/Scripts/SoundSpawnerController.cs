@@ -11,7 +11,7 @@ public class SoundSpawnerController : MonoBehaviour
         _audioSource = GetComponent<AudioSource>();
     }
 
-    public void PlayClip(float volume = 0.5f)
+    public void PlayClip(float volume = 0.2f)
     {
         _audioSource.PlayOneShot(clip);
         Destroy(gameObject, clip.length);

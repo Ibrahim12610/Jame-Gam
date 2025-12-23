@@ -11,7 +11,7 @@ public class ExitDoorTriggerController : MonoBehaviour
     
     private float _totalTime = 1f;
     private bool _isPlayerOnCollider = false;
-    private bool _isExiting = false;
+    public bool isExiting = false;
 
     private AudioSource _audioSource;
     private Coroutine _fadeRoutine;
@@ -47,18 +47,18 @@ public class ExitDoorTriggerController : MonoBehaviour
     {
         _totalTime += Time.deltaTime * exitSpeed;
 
-        if (_isExiting) return;
+        if (isExiting) return;
         
-        _isExiting = true;
+        isExiting = true;
         StartExitAudio();
     }
     
     
     private void HandleExitRelease()
     {
-        if (_isExiting)
+        if (isExiting)
         {
-            _isExiting = false;
+            isExiting = false;
             StopExitAudio();
         }
 
