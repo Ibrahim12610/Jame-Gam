@@ -306,7 +306,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAI
   visionLayer:
     serializedVersion: 2
-    m_Bits: 520
+    m_Bits: 1536
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 1024
   taskPatrolPoints:
   - {fileID: 0}
   - {fileID: 0}
@@ -318,7 +321,7 @@ MonoBehaviour:
   chaseSpeed: 7
   chanceToPatrolTask: 0.15
   chancePerSecondToObserve: 0.1
-  rays: 22
+  rays: 50
   rayOffset: 0.8
   distance: 12
   angle: 100
@@ -725,7 +728,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!114 &5227444029363243463
 MonoBehaviour:
   m_ObjectHideFlags: 0

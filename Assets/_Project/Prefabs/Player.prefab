@@ -255,7 +255,7 @@ GameObject:
   - component: {fileID: 3208954812301413250}
   - component: {fileID: 4714970608268374135}
   - component: {fileID: 16554907316704540}
-  m_Layer: 3
+  m_Layer: 10
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -379,7 +379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a9ef3faafd8174e97f26203c4d0bd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  moveSpeed: 6
+  moveSpeed: 30
   crouchSpeedMultiplier: 0.5
   footstepSoundSignalDelay: 0
   isCrouching: 0
