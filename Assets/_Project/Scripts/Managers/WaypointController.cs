@@ -49,7 +49,6 @@ public class WaypointController : MonoBehaviour
             screenPos.z
         );
     }
-    
 
     private Quaternion CalculateRotationTowards(Vector3 targetPos, Vector3 waypointPos)
     {

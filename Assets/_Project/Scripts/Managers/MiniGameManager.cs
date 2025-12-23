@@ -20,6 +20,11 @@ public class MiniGameManager : MonoBehaviour
         Instance = this;
     }
 
+    private void Start()
+    {
+        OnMiniGameComplete(0);
+    }
+
     public void OnMiniGameComplete(int amount)
     {
         miniGameAmount -= amount;
