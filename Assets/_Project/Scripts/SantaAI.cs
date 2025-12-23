@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyAI : MonoBehaviour
+public class SantaAI : MonoBehaviour
 {
     [Header("Components")]
     [SerializeField] private LayerMask visionLayer;
@@ -16,7 +16,10 @@ public class EnemyAI : MonoBehaviour
 
     [Header("Move Settings")]
     public float walkSpeed;
+    public float inspectSpeed;
     public float chaseSpeed;
+    public Vector2 minWorldBounds;
+    public Vector2 maxWorldBounds;
     [Tooltip("Each time santa picks a new patrol " +
         "point this is the probability he will pick a task point")]
     public float chanceToPatrolTask = .1f;
@@ -29,7 +32,8 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] float angle;
     [SerializeField] bool debugShowSight;
 
-
+    [HideInInspector] public bool isChasing;
+    [HideInInspector] public Vector2 target;
     public List<SoundSignal> soundStack;
     [HideInInspector] public bool canSeePlayer = false;
 
@@ -194,17 +198,15 @@ public class EnemyAI : MonoBehaviour
     }
     bool IsPositionWalkable(Vector2 position)
     {
-        if (!NavMesh.SamplePosition(position, out NavMeshHit hit, 0.75f, NavMesh.AllAreas))
-            return true;
-
         int notWalkableArea = NavMesh.GetAreaFromName("Not Walkable");
 
-        // If area doesn't exist, treat everything as walkable
-        if (notWalkableArea == -1)
-            return false;
+        // Build a mask that excludes Not Walkable
+        int walkableMask = NavMesh.AllAreas;
+        if (notWalkableArea != -1)
+            walkableMask &= ~(1 << notWalkableArea);
 
-        bool isNotWalkable = (hit.mask & (1 << notWalkableArea)) != 0;
-        return isNotWalkable;
+        // Only succeeds if position is ON the NavMesh AND in an allowed area
+        return NavMesh.SamplePosition(position, out _, 0.75f, walkableMask);
     }
 }
 public class SoundSignal
@@ -241,14 +243,18 @@ public struct SoundType
     public enum SoundName
     {
         Footstep,
-        Task
+        Task,
+        ElfBell
         //ADD MORE SOUNDS HERE
     }
 
     public static readonly SoundType Footstep =
-        new SoundType(SoundName.Footstep, 4.5f, 1f, .5f, 1);
+        new SoundType(SoundName.Footstep, 4.5f, 1f, .5f, 4);
 
     public static readonly SoundType Task =
-        new SoundType(SoundName.Task, 12f, 12f, 5f, 2);
+        new SoundType(SoundName.Task, 12f, 12f, 5f, 1);
+
+    public static readonly SoundType ElfBell =
+        new SoundType(SoundName.ElfBell, 150, 0, 5, 2);
     //ADD MORE SOUNDS HERE
 }

@@ -5,33 +5,43 @@ using Random = UnityEngine.Random;
 
 public class SantaPatroling : StateMachineBehaviour
 {
+    Animator animator;
     Transform transform;
-    EnemyAI ai;
+    SantaAI ai;
 
-    Vector3 target;
-    private bool headToBells = false;
-    private Vector2 _bellPoint;
+    bool EvaluateSound()
+    {
+        if (ai.soundStack.Count == 0)
+            return false;
+        for (int i = 0; i < ai.soundStack.Count; i++)
+        {
+            SoundSignal signal = ai.soundStack[i];
 
-    private void OnEnable()
-    {
-        ElfDetectionController.ElfDetectedEvent += HandleBellEvent;
-    }
-    
-    private void OnDisable()
-    {
-        ElfDetectionController.ElfDetectedEvent -= HandleBellEvent;
-    }
-    
-    void HandleBellEvent(bool currentCondition, Vector2 bellPoint)
-    {
-        headToBells = currentCondition;
-        _bellPoint = bellPoint;
-    }
+            // Remove expired sounds
+            if (Time.time > signal.timeStamp + signal.type.lifeTime)
+            {
+                ai.soundStack.RemoveAt(i);
+                i--;
+                if (ai.soundStack.Count == 0)
+                    return false;
+                continue;
+            }
 
+            // React to best sound
+            ai.target = signal.originalPos + Random.insideUnitCircle * signal.type.blurRadius;
+            animator.SetBool("inspecting", true);
+
+            // Clear footsteps after reaction
+            ai.ClearSoundsOfType(signal.type.name);
+            return true;
+        }
+        return false;
+    }
     override public void OnStateEnter
         (Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        ai = animator.GetComponent<EnemyAI>();
+        this.animator = animator;
+        ai = animator.GetComponent<SantaAI>();
         ai.agent.speed = ai.walkSpeed;
         Debug.Log("Patrolling");
 
@@ -42,10 +52,9 @@ public class SantaPatroling : StateMachineBehaviour
     {
         ai.PointTowardsCartesian(ai.agent.velocity);
 
-        if (headToBells)
-        {
-            ai.agent.SetDestination(_bellPoint);
-        }
+        if (ai.soundStack.Count != 0)
+            EvaluateSound();
+
         if (!ai.IsAgentMoving())
             DecideNewPoint();
     }
@@ -78,15 +87,15 @@ public class SantaPatroling : StateMachineBehaviour
         }
 
         Vector2 point = selectedTransform.position;
-        target = point;
-        ai.agent.SetDestination(target);
+        ai.target = point;
+        ai.agent.SetDestination(ai.target);
     }
     void FindRandomWalkablePoint()
     {
         Vector2 result = Vector2.zero;
         bool pointValid = false;
-        Vector2 max = new Vector2(11, 6.5f);
-        Vector2 min = new Vector2(-10, -5.5f);
+        Vector2 max = ai.maxWorldBounds;
+        Vector2 min = ai.minWorldBounds;
 
         int attempts = 0;
         int maxAttempts = 50;
@@ -97,7 +106,7 @@ public class SantaPatroling : StateMachineBehaviour
             float y = Random.Range(min.y, max.y);
             Vector2 posToTest = new Vector2(x, y);
 
-            if (ai.IsPathValid(posToTest))
+            if (!ai.IsPathValid(posToTest))
                 continue;
 
             result = posToTest;
@@ -108,37 +117,8 @@ public class SantaPatroling : StateMachineBehaviour
         if (!pointValid)
             return;
 
-        target = result;
-        ai.agent.SetDestination(target);
+        ai.target = result;
+        ai.agent.SetDestination(ai.target);
     }
     
 }
-// OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
-//override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-//{
-//    
-//}
-
-// OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
-//override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-//{
-//    
-//}
-
-// OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-//override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-//{
-//    
-//}
-
-// OnStateMove is called right after Animator.OnAnimatorMove()
-//override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-//{
-//    // Implement code that processes and affects root motion
-//}
-
-// OnStateIK is called right after Animator.OnAnimatorIK()
-//override public void OnStateIK(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-//{
-//    // Implement code that sets up animation IK (inverse kinematics)
-//}

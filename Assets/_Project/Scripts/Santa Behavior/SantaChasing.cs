@@ -8,8 +8,9 @@ public class SantaChasing : StateMachineBehaviour
 {
     Transform transform;
     Animator animator;
-    EnemyAI ai;
-    Transform target;
+    SantaAI ai;
+
+    Transform player;
 
     bool isMovingDirectlyToPlayer; //true if santa can see the player
                                    //and has a path to DIRECTLY THE PLAYER
@@ -27,14 +28,16 @@ public class SantaChasing : StateMachineBehaviour
     {
         Debug.Log("WE CHASING NOW");
         animator.ResetTrigger("lostPlayer");
+        animator.SetBool("inspecting", false);
         
         SantaChasingStarted?.Invoke();
-        ai = animator.GetComponent<EnemyAI>();
+        ai = animator.GetComponent<SantaAI>();
         ai.agent.speed = ai.chaseSpeed;
-        target = ai.player.transform;
+        ai.target = ai.player.transform.position;
         transform = animator.transform;
         this.animator = animator;
         isMovingDirectlyToPlayer = true;
+        player = PlayerManager.Instance.transform;
     }
     override public void OnStateUpdate
         (Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -44,7 +47,8 @@ public class SantaChasing : StateMachineBehaviour
         {
             if (ai.canSeePlayer)
             {
-                ai.agent.SetDestination(target.position);
+                ai.target = player.position;
+                ai.agent.SetDestination(ai.target);
                 UpdatePlayerPos();
             }
             else
@@ -113,8 +117,8 @@ public class SantaChasing : StateMachineBehaviour
 
             UpdatePlayerPos();
 
-            // Clear footsteps after reaction
-            ai.ClearSoundsOfType(SoundType.SoundName.Footstep);
+            // Clear type after reaction
+            ai.ClearSoundsOfType(signal.type.name);
             return true;
         }
         return false;

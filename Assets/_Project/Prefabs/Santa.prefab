@@ -314,18 +314,23 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  monoBehaviour: {fileID: 0}
+  monoBehaviour: {fileID: 1472019208648329765}
   agent: {fileID: 0}
   player: {fileID: 0}
-  walkSpeed: 3.5
+  walkSpeed: 4
+  inspectSpeed: 5.5
   chaseSpeed: 7
+  minWorldBounds: {x: -52, y: -76}
+  maxWorldBounds: {x: 59, y: 18}
   chanceToPatrolTask: 0.15
   chancePerSecondToObserve: 0.1
-  rays: 50
+  rays: 30
   rayOffset: 0.8
-  distance: 12
+  distance: 8
   angle: 100
   debugShowSight: 1
+  isChasing: 0
+  target: {x: 0, y: 0}
   canSeePlayer: 0
 --- !u!195 &609916360012922232
 NavMeshAgent:
