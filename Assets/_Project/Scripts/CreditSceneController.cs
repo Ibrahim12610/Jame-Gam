@@ -10,7 +10,7 @@ public class CreditSceneController : MonoBehaviour
 
     private IEnumerator HandleSceneChange()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
         SceneChangeManager.Instance.LoadNextStage("Main Menu2");
     }
 }

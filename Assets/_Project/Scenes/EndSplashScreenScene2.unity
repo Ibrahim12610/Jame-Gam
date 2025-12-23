@@ -432,9 +432,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c3070f27b512f64dab88c516e241c8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TextFader
-  fadeDuration: 3
-  fadeDelay: 0.5
-  disableInteractionWhenHidden: 1
+  fadeDuration: 2
+  fadeDelay: 1
 --- !u!114 &705221509
 MonoBehaviour:
   m_ObjectHideFlags: 0

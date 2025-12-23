@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class ExitDoorTriggerController : MonoBehaviour
 {
     [SerializeField] private GameObject sliderGameObject;
+    [SerializeField] private GameObject instructionsObject;
     [SerializeField] private Slider slider;
     [SerializeField] private float exitSpeed = 1f;
     [SerializeField] private AudioClip exitSound;
@@ -102,16 +103,22 @@ public class ExitDoorTriggerController : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if(!other.CompareTag("Player")) return;
+        instructionsObject.SetActive(true);
         _isPlayerOnCollider = true;
     }
     
     private void OnTriggerStay2D(Collider2D other)
     {
+        if(!other.CompareTag("Player")) return;
+        instructionsObject.SetActive(true);
         _isPlayerOnCollider = true;
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
+        if(!other.CompareTag("Player")) return;
+        instructionsObject.SetActive(false);
         _isPlayerOnCollider = false;
     }
 

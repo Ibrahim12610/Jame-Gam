@@ -1,22 +1,10 @@
 fileFormatVersion: 2
-guid: 1d082282b7d0a4bda80eeb6d7e5771a9
+guid: 0ddc77f0bed5f1440aec06090cd51bc5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3537084851208625409
-    second: quest-pointer_0
-  - first:
-      213: 4442941914800724985
-    second: quest-pointer_1
-  - first:
-      213: 4274236509443562626
-    second: quest-pointer_2
-  - first:
-      213: 5194130764972804285
-    second: quest-pointer_3
-  - first:
-      213: -7866061537137806091
-    second: quest-pointer_4
+      213: 8159277434392181173
+    second: splash-screens-jame-gam2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -63,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,7 +101,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -125,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: quest-pointer_0
+      name: splash-screens-jame-gam2_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
+        width: 192
+        height: 108
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,96 +128,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ff26b4f6110c9eec0800000000000000
-      internalID: -3537084851208625409
+      spriteID: 5b97eccc8939b3170800000000000000
+      internalID: 8159277434392181173
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: quest-pointer_1
+      name: splash-screens-jame-gam2_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 192
         y: 0
-        width: 32
-        height: 32
+        width: 192
+        height: 108
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 9fb146db12088ad30800000000000000
-      internalID: 4442941914800724985
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: quest-pointer_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.34375}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 28c936f9573215b30800000000000000
-      internalID: 4274236509443562626
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: quest-pointer_3
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.34375}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: db8c12b3962451840800000000000000
-      internalID: 5194130764972804285
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: quest-pointer_4
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.34375}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5f4b98945b226d290800000000000000
-      internalID: -7866061537137806091
+      spriteID: 671ddf4f266998c4db583b4b0d47b6c2
+      internalID: 1099856973
       vertices: []
       indices: 
       edges: []
@@ -238,7 +160,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: c197f3568f9fb4cfb9de9c68956eb4ff
+    spriteID: c24bb3045cd252945a2ac0ad7a2921f8
     internalID: 0
     vertices: []
     indices: 
@@ -248,13 +170,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":2.0,"y":1.0},"gridSpriteSize":{"x":192.0,"y":108.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      quest-pointer_0: -3537084851208625409
-      quest-pointer_1: 4442941914800724985
-      quest-pointer_2: 4274236509443562626
-      quest-pointer_3: 5194130764972804285
-      quest-pointer_4: -7866061537137806091
+      splash-screens-jame-gam2_0: 8159277434392181173
+      splash-screens-jame-gam2_1: 1099856973
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
