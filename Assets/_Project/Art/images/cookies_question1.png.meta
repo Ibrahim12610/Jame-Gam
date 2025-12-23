@@ -1,25 +1,37 @@
 fileFormatVersion: 2
-guid: 2c5e3863f032c49588df005b97ce476a
+guid: a7cbd03f2305c47ee820da2b553520aa
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 55535335213659540
-    second: lights_mini_question1_0
+      213: 6197869449393875806
+    second: cookies_question1_0
   - first:
-      213: 3390344958740207076
-    second: lights_mini_question1_1
+      213: 924604472175987370
+    second: cookies_question1_1
   - first:
-      213: -5835598228689573470
-    second: lights_mini_question1_2
+      213: -7707904400391424764
+    second: cookies_question1_2
   - first:
-      213: -4178401524472821159
-    second: lights_mini_question1_3
+      213: 623431056820805756
+    second: cookies_question1_3
   - first:
-      213: -191635135010985139
-    second: lights_mini_question1_4
+      213: 1903982543714227363
+    second: cookies_question1_4
   - first:
-      213: -803831524358799585
-    second: lights_mini_question1_5
+      213: -7238663317759045024
+    second: cookies_question1_5
+  - first:
+      213: 7651507269548218066
+    second: cookies_question1_6
+  - first:
+      213: -8146352668475376442
+    second: cookies_question1_7
+  - first:
+      213: 7921167954798176179
+    second: cookies_question1_8
+  - first:
+      213: -3701810125768481907
+    second: cookies_question1_9
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -115,7 +127,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: lights_mini_question1_0
+      name: cookies_question1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -130,8 +142,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 49574e7d71d45c000800000000000000
-      internalID: 55535335213659540
+      spriteID: e5b2e5f2d61430650800000000000000
+      internalID: 6197869449393875806
       vertices: []
       indices: 
       edges: []
@@ -140,7 +152,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 46a80375bb00f45469b08ea9d618d42f
+    spriteID: f6882c9575da7492c9e6773e03dd5c27
     internalID: 0
     vertices: []
     indices: 
@@ -152,7 +164,7 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":36.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      lights_mini_question1_0: 55535335213659540
+      cookies_question1_0: 6197869449393875806
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
