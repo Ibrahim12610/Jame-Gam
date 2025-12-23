@@ -230,9 +230,9 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!58 &3837226982101877504
 CircleCollider2D:
@@ -314,12 +314,15 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   monoBehaviour: {fileID: 0}
   agent: {fileID: 0}
   player: {fileID: 0}
-  walkSpeed: 3.5
+  walkSpeed: 5.5
   chaseSpeed: 7
-  chanceToPatrolTask: 0.15
+  chanceToPatrolTask: 0.5
   chancePerSecondToObserve: 0.1
   rays: 50
   rayOffset: 0.8
@@ -393,7 +396,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 9059154813049869144, guid: 5583af8a36d164b4298715570897dd8b, type: 2}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 4b2e764d105c9d44581d784a13b9a260, type: 3}
+  m_Resource: {fileID: 8300000, guid: 51d33d86d2d5b66438cbeed3b4562184, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.2
   m_Pitch: 1
@@ -491,7 +494,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d94c969707767f34d91fbe9b9829528a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  maxDistance: 20
+  maxDistance: 25
   maxVolume: 0.3
 --- !u!1 &3732748900484159067
 GameObject:

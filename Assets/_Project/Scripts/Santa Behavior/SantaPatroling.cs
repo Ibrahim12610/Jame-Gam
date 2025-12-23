@@ -85,7 +85,7 @@ public class SantaPatroling : StateMachineBehaviour
     {
         Vector2 result = Vector2.zero;
         bool pointValid = false;
-        Vector2 max = new Vector2(11, 6.5f);
+        Vector2 max = new Vector2(30, 30f); // original 11 6.5
         Vector2 min = new Vector2(-10, -5.5f);
 
         int attempts = 0;

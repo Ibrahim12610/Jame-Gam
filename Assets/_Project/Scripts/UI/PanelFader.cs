@@ -3,14 +3,11 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 
-public class TextFader : MonoBehaviour
+public class PanelFader : MonoBehaviour
 {
     [Header("Fade Settings")]
     [SerializeField] private float fadeDuration = 0.5f;
     [SerializeField] private float fadeDelay = 0f;
-
-    [Header("Interaction Control")]
-    [SerializeField] private bool disableInteractionWhenHidden = true;
 
     private CanvasGroup _canvasGroup;
     private Coroutine _fadeRoutine;
