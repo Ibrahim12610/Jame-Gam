@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EndGameSceneController : MonoBehaviour
 {
+    [SerializeField] private float duration;
+    
     private void Awake()
     {
         StartCoroutine(HandleSceneChange());
@@ -11,7 +13,7 @@ public class EndGameSceneController : MonoBehaviour
 
     private IEnumerator HandleSceneChange()
     {
-        yield return new WaitForSeconds(3f);
-        SceneChangeManager.Instance.LoadNextStage("CreditScene2");
+        yield return new WaitForSeconds(duration);
+        SceneChangeManager.Instance.LoadNextStage("Main Menu2");
     }
 }

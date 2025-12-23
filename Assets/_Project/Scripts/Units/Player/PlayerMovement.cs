@@ -47,7 +47,8 @@ public class PlayerMovement : MonoBehaviour
 
         rb.linearVelocity = moveVector;
         
-        if (moveVector.magnitude > 0 &&
+        if (!isCrouching &&
+            moveVector.magnitude > 0 &&
             Time.time >= lastFootstepTimestamp + footstepSoundSignalDelay)
             CreateFootstepSound();
 
@@ -67,12 +68,11 @@ public class PlayerMovement : MonoBehaviour
     void CreateFootstepSound()
     {
         lastFootstepTimestamp = Time.time;
-        EnemyAI[] listeners = PlayerManager.Instance.soundListeners;
+        SantaAI listener = PlayerManager.Instance.santaListener;
         SoundSignal signal =
             new SoundSignal(SoundType.Footstep, transform.position, Time.time);
         DrawCircle(transform.position, signal.type.travelDistance);
-        foreach (EnemyAI listener in listeners)
-            listener.HearSound(signal);
+        listener.HearSound(signal);
     }
 
     //DEBUG

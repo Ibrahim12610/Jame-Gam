@@ -14,7 +14,7 @@ public class PlayerManager : MonoBehaviour
     private bool _pauseMenuActive = false;
     private bool _popUpActive = false;
 
-    [HideInInspector] public EnemyAI[] soundListeners;
+    [HideInInspector] public SantaAI santaListener;
 
     public UnityEvent onKillSequence;
     
@@ -56,7 +56,7 @@ public class PlayerManager : MonoBehaviour
     //RUN THIS WHEN THE GAME BEGINS
     public void FindSoundListenersInScene()
     {
-        soundListeners = FindObjectsByType<EnemyAI>(FindObjectsSortMode.None);
+        santaListener = FindFirstObjectByType<SantaAI>();
     }
     
     public bool IsInImpulse() => _impulseController.IsInImpulse();
