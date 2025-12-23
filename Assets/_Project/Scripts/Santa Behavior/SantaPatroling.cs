@@ -34,15 +34,26 @@ public class SantaPatroling : StateMachineBehaviour
     }
     void FindRandomTaskPoint()
     {
-        if (ai.taskPatrolPoints.Length == 0)
+        int attempts = 0;
+        int maxAttempts = ai.taskPatrolPoints.Length;
+        Transform selectedTransform = null;
+
+        while (selectedTransform == null && attempts < maxAttempts)
         {
+            int index = Random.Range(0, ai.taskPatrolPoints.Length);
+            selectedTransform = ai.taskPatrolPoints[index];
+            attempts++;
+        }
+
+        // If no valid transform found, fall back to random walkable point
+        if (selectedTransform == null)
+        {
+            Debug.LogWarning("All task patrol points have been destroyed, using random walkable point");
             FindRandomWalkablePoint();
-            Debug.LogError("No Task Patrol Points");
             return;
         }
-        Debug.Log("Checking Task");
-        int selectedTransform = Random.Range(0, ai.taskPatrolPoints.Length);
-        Vector2 point = ai.taskPatrolPoints[selectedTransform].position;
+
+        Vector2 point = selectedTransform.position;
         target = point;
         ai.agent.SetDestination(target);
     }
