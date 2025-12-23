@@ -254,6 +254,7 @@ GameObject:
   - component: {fileID: 8495101181358013102}
   - component: {fileID: 3208954812301413250}
   - component: {fileID: 4714970608268374135}
+  - component: {fileID: 16554907316704540}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -433,6 +434,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   _playerMovement: {fileID: 0}
   soundListeners: []
+  onKillSequence:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 16554907316704540}
+        m_TargetAssemblyTypeName: DestroyController, Assembly-CSharp
+        m_MethodName: DestroyWithFade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!82 &8495101181358013102
 AudioSource:
   m_ObjectHideFlags: 0
@@ -596,6 +612,21 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.1635851, y: 0.33368564}
   m_EdgeRadius: 0
+--- !u!114 &16554907316704540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1788788809763119454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f197a560602e23e43959df1d725025b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DestroyController
+  fadeDuration: 0.3
+  healthCollider: {fileID: 0}
+  impulseCollider: {fileID: 0}
 --- !u!1 &4033428941179096859
 GameObject:
   m_ObjectHideFlags: 0

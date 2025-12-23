@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class EnemyAI : MonoBehaviour
 {
     [Header("Components")]
+    [SerializeField] private LayerMask visionLayer;
     public Transform[] taskPatrolPoints;
     [HideInInspector] public MonoBehaviour monoBehaviour;
     [HideInInspector] public NavMeshAgent agent;
@@ -103,7 +104,8 @@ public class EnemyAI : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(
                 rayOrigin,
                 direction,
-                distance
+                distance,
+                visionLayer
             );
 
             if (hit.collider != null)

@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class PlayerManager : MonoBehaviour
     private bool _popUpActive = false;
 
     [HideInInspector] public EnemyAI[] soundListeners;
+
+    public UnityEvent onKillSequence;
     
     private void Awake()
     {
@@ -79,5 +82,10 @@ public class PlayerManager : MonoBehaviour
             _playerMovement.disableMovement = false;
             _playerAnimator.disableAnimator = false;
         }
+    }
+
+    public void HandleonKillSequence()
+    {
+        onKillSequence.Invoke();
     }
 }
