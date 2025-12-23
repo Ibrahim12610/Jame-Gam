@@ -1,5 +1,7 @@
+using System;
 using UnityEngine;
 using UnityEngine.AI;
+using Random = UnityEngine.Random;
 
 public class SantaPatroling : StateMachineBehaviour
 {
@@ -7,6 +9,24 @@ public class SantaPatroling : StateMachineBehaviour
     EnemyAI ai;
 
     Vector3 target;
+    private bool headToBells = false;
+    private Vector2 _bellPoint;
+
+    private void OnEnable()
+    {
+        ElfDetectionController.ElfDetectedEvent += HandleBellEvent;
+    }
+    
+    private void OnDisable()
+    {
+        ElfDetectionController.ElfDetectedEvent -= HandleBellEvent;
+    }
+    
+    void HandleBellEvent(bool currentCondition, Vector2 bellPoint)
+    {
+        headToBells = currentCondition;
+        _bellPoint = bellPoint;
+    }
 
     override public void OnStateEnter
         (Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -22,6 +42,10 @@ public class SantaPatroling : StateMachineBehaviour
     {
         ai.PointTowardsCartesian(ai.agent.velocity);
 
+        if (headToBells)
+        {
+            ai.agent.SetDestination(_bellPoint);
+        }
         if (!ai.IsAgentMoving())
             DecideNewPoint();
     }

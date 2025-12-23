@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5675159620301403299}
   - component: {fileID: 8519366622418641616}
-  m_Layer: 0
+  - component: {fileID: 2849304146403025328}
+  m_Layer: 9
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,6 +92,22 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &2849304146403025328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1707109170803577972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &2013110404590322701
 GameObject:
   m_ObjectHideFlags: 0
@@ -103,7 +120,7 @@ GameObject:
   - component: {fileID: 5310176848417600290}
   - component: {fileID: 3513450283672162048}
   - component: {fileID: 4287300799953395506}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GenericObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}

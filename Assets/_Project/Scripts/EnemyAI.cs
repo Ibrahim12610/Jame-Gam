@@ -50,6 +50,7 @@ public class EnemyAI : MonoBehaviour
     }
     private void Update()
     {
+        
         canSeePlayer = CanSeeLayer(LayerMask.NameToLayer("Player"));
         animator.SetBool("canSeePlayer", canSeePlayer);
     }
