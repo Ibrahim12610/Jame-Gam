@@ -99,16 +99,19 @@ public class VentController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (!other.CompareTag("Player")) return;
         _isPlayerOnCollider = true;
     }
     
     private void OnTriggerStay2D(Collider2D other)
     {
+        if (!other.CompareTag("Player")) return;
         _isPlayerOnCollider = true;
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
+        if (!other.CompareTag("Player")) return;
         _isPlayerOnCollider = false;
     }
 
