@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class SantaChasing : StateMachineBehaviour
 {
@@ -18,13 +20,15 @@ public class SantaChasing : StateMachineBehaviour
     //SETTINGS
     float returnToPatrolDelay = 4f; //When santa loses the player
                                     //how long until begins to patrol again
-
+    public static event Action SantaChasingStarted;
+    
     override public void OnStateEnter
         (Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         Debug.Log("WE CHASING NOW");
         animator.ResetTrigger("lostPlayer");
-
+        
+        SantaChasingStarted?.Invoke();
         ai = animator.GetComponent<EnemyAI>();
         ai.agent.speed = ai.chaseSpeed;
         target = ai.player.transform;
