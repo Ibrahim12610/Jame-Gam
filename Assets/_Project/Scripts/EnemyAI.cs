@@ -7,6 +7,7 @@ public class EnemyAI : MonoBehaviour
 {
     [Header("Components")]
     [SerializeField] private LayerMask visionLayer;
+    [SerializeField] private LayerMask playerLayer;
     public Transform[] taskPatrolPoints;
     [HideInInspector] public MonoBehaviour monoBehaviour;
     [HideInInspector] public NavMeshAgent agent;
@@ -50,8 +51,9 @@ public class EnemyAI : MonoBehaviour
     }
     private void Update()
     {
-        
-        canSeePlayer = CanSeeLayer(LayerMask.NameToLayer("Player"));
+
+        // canSeePlayer = CanSeeLayer(LayerMask.NameToLayer("PlayerRaycast"));
+        canSeePlayer = CanSeeLayer(playerLayer);
         animator.SetBool("canSeePlayer", canSeePlayer);
     }
     //-----Sound stack stuff-----
@@ -111,7 +113,7 @@ public class EnemyAI : MonoBehaviour
 
             if (hit.collider != null)
             {
-                if (hit.transform.gameObject.layer == layer)
+                if (((1 << hit.transform.gameObject.layer) & layer) != 0)
                 {
                     canSee = true;
                     if (debugShowSight)
