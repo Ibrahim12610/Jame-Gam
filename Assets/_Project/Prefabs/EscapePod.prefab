@@ -783,7 +783,7 @@ MonoBehaviour:
   otherVent: {fileID: 3282506349492967591}
   sliderGameObject: {fileID: 4211870909496208207}
   slider: {fileID: 2206359257154313365}
-  ventingSpeed: 1
+  ventingSpeed: 0.5
   escapeSound: {fileID: 8300000, guid: 942e06aca2265a748bfa414cfa578b15, type: 3}
 --- !u!82 &514299491012964894
 AudioSource:
@@ -1459,7 +1459,7 @@ MonoBehaviour:
   otherVent: {fileID: 1045737683091893942}
   sliderGameObject: {fileID: 2077897724511128809}
   slider: {fileID: 4599352135657225526}
-  ventingSpeed: 1
+  ventingSpeed: 0.5
   escapeSound: {fileID: 8300000, guid: 942e06aca2265a748bfa414cfa578b15, type: 3}
 --- !u!82 &2140594321608587529
 AudioSource:

@@ -637,6 +637,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8409790568847382039}
   - component: {fileID: 3680374805612792254}
+  - component: {fileID: 8798961319427979084}
   m_Layer: 0
   m_Name: Collision
   m_TagString: Untagged
@@ -705,6 +706,22 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.8536039, y: 0.27293113}
   m_EdgeRadius: 0
+--- !u!114 &8798961319427979084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7540485326270673939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &8491507345232773085
 GameObject:
   m_ObjectHideFlags: 0
