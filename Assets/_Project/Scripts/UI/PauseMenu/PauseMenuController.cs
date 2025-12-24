@@ -41,6 +41,13 @@ public class PauseMenuController : MonoBehaviour
         pauseMenu.SetActive(false);
         SceneChangeManager.Instance.RestartScene(SceneManager.GetActiveScene().name);
     }
+    
+    public void OnSkipButtonClicked()
+    {
+        Time.timeScale = 1;
+        pauseMenu.SetActive(false);
+        SceneChangeManager.Instance.RestartScene("EndSplashScreenScene2");
+    }
 
     public void OnQuitButtonClicked()
     {
