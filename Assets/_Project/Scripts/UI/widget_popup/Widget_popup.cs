@@ -21,6 +21,7 @@ public class Widget_popup : MonoBehaviour
     public void Show(widgets data)
     {
         if (data == null) return;
+        PlayerManager.Instance.DisablePlayerLogic("PopUp");
         
         // Close any previously open widget
         if (currentlyOpenWidget != null && currentlyOpenWidget != this)
@@ -55,12 +56,13 @@ public class Widget_popup : MonoBehaviour
     {
         if (panel != null)
             panel.SetActive(false);
-        
+
         // Clear the reference if this widget was the open one
         if (currentlyOpenWidget == this)
         {
             currentlyOpenWidget = null;
         }
+        PlayerManager.Instance.EnablePlayerLogic("PopUp");
     }
 
     public bool IsVisible()
