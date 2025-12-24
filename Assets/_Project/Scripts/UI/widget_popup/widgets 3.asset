@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c34e484c6353b45db81a08d8a7a8a7bd, type: 3}
+  m_Name: widgets 3
+  m_EditorClassIdentifier: Assembly-CSharp::widgets
+  image: {fileID: -3471075988786224611, guid: c369f3cffce214b5bacdf8198a84efe5, type: 3}
+  description: 
