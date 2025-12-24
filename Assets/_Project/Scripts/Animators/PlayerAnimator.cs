@@ -8,6 +8,7 @@ public class PlayerAnimator : MonoBehaviour
     private Vector2 _lastMoveDirection = Vector2.down;
     private PlayerMovement _playerMovement;
     private bool _isCrouching;
+    private bool _isDead;
 
     [SerializeField] private float attackDuration = 0.35f;
 
@@ -31,6 +32,10 @@ public class PlayerAnimator : MonoBehaviour
     private const string State_crouch_side_walk = "crouch_side_walk";
     private const string State_crouch_front_walk = "crouch_front_walk";
     private const string State_crouch_back_walk = "crouch_back_walk";
+    
+    private const string State_death_forward = "forward_death";
+    private const string State_death_side = "sideways_death";
+    private const string State_death_back = "backward_death";
 
     public bool disableAnimator = false;
 
@@ -44,7 +49,7 @@ public class PlayerAnimator : MonoBehaviour
     }
     void Update()
     {
-        if (disableAnimator) return;
+        if (disableAnimator || _isDead) return;
         
         Vector2 moveVector = Vector2.zero;
 
@@ -168,5 +173,53 @@ public class PlayerAnimator : MonoBehaviour
         if (_spriteRenderer == null) return;
 
         _spriteRenderer.flipX = direction.x < 0;
+    }
+    
+    public void TriggerDeath()
+    {
+        if (_isDead) return;
+
+        _isDead = true;
+        _isAttacking = false;
+
+        string deathState = GetDeathState(_lastMoveDirection);
+
+        _animator.Play(deathState, 0, 0f);
+        
+        float clipLength = GetAnimationLength(deathState);
+        Invoke(nameof(FreezeAnimator), clipLength);
+    }
+    
+    string GetDeathState(Vector2 direction)
+    {
+        float absX = Mathf.Abs(direction.x);
+        float absY = Mathf.Abs(direction.y);
+
+        if (absY > absX)
+        {
+            return direction.y < 0
+                ? State_death_forward
+                : State_death_back;
+        }
+
+        return State_death_side;
+    }
+    
+    void FreezeAnimator()
+    {
+        _animator.speed = 0f;
+    }
+    
+    float GetAnimationLength(string stateName)
+    {
+        var controller = _animator.runtimeAnimatorController;
+
+        foreach (var clip in controller.animationClips)
+        {
+            if (clip.name == stateName)
+                return clip.length;
+        }
+
+        return 0.5f;
     }
 }

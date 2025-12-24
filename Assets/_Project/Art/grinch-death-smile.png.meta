@@ -1,0 +1,832 @@
+fileFormatVersion: 2
+guid: 8b3b63d4a15a2aa4f9faf68ce1b256f1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8992788061241942345
+    second: grinch-death-smile_0
+  - first:
+      213: -5577981969431619629
+    second: grinch-death-smile_1
+  - first:
+      213: -485906700684224854
+    second: grinch-death-smile_2
+  - first:
+      213: 9097652985237152351
+    second: grinch-death-smile_3
+  - first:
+      213: -5915200202789646397
+    second: grinch-death-smile_4
+  - first:
+      213: -7847446479759600740
+    second: grinch-death-smile_5
+  - first:
+      213: 4075026184920062178
+    second: grinch-death-smile_6
+  - first:
+      213: 3210255230068882752
+    second: grinch-death-smile_7
+  - first:
+      213: -7428752704747021845
+    second: grinch-death-smile_8
+  - first:
+      213: 7455480057748956984
+    second: grinch-death-smile_9
+  - first:
+      213: -3997718746189749490
+    second: grinch-death-smile_10
+  - first:
+      213: 922334264706818278
+    second: grinch-death-smile_11
+  - first:
+      213: -2385169802122514860
+    second: grinch-death-smile_12
+  - first:
+      213: 3715230017482630873
+    second: grinch-death-smile_13
+  - first:
+      213: -984869799911586574
+    second: grinch-death-smile_14
+  - first:
+      213: 6139296853726559505
+    second: grinch-death-smile_15
+  - first:
+      213: 7512848305430182997
+    second: grinch-death-smile_16
+  - first:
+      213: 637436029330964037
+    second: grinch-death-smile_17
+  - first:
+      213: -1294539263284403902
+    second: grinch-death-smile_18
+  - first:
+      213: 3030731630797423099
+    second: grinch-death-smile_19
+  - first:
+      213: 5873548803928161576
+    second: grinch-death-smile_20
+  - first:
+      213: -5156019736949192504
+    second: grinch-death-smile_21
+  - first:
+      213: -8468218361633095563
+    second: grinch-death-smile_22
+  - first:
+      213: 8887890110808112949
+    second: grinch-death-smile_23
+  - first:
+      213: -7822710577196135883
+    second: grinch-death-smile_24
+  - first:
+      213: -8596129733666083826
+    second: grinch-death-smile_25
+  - first:
+      213: -6165078415155411582
+    second: grinch-death-smile_26
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: grinch-death-smile_0
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 104
+        width: 24
+        height: 31
+      alignment: 9
+      pivot: {x: 0.5, y: 0.032258064}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7bedc4577e2333380800000000000000
+      internalID: -8992788061241942345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grinch-death-smile_1
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 104
+        width: 26
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d79e74c3f60792b0800000000000000
+      internalID: -5577981969431619629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grinch-death-smile_2
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 105
+        width: 25
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa61cbf1e66b149f0800000000000000
+      internalID: -485906700684224854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grinch-death-smile_3
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 106
+        width: 26
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5225da403b514e70800000000000000
+      internalID: 9097652985237152351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grinch-death-smile_4
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 122
+        width: 24
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cf876171ccf8eda0800000000000000
+      internalID: -5915200202789646397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grinch-death-smile_5
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 119
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c931a041105481390800000000000000
+      internalID: -7847446479759600740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grinch-death-smile_6
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 105
+        width: 26
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e8539a89b66d8830800000000000000
+      internalID: 4075026184920062178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grinch-death-smile_7
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 105
+        width: 26
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04d78928f1e1d8c20800000000000000
+      internalID: 3210255230068882752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grinch-death-smile_8
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 104
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be9d45536c4c7e890800000000000000
+      internalID: -7428752704747021845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grinch-death-smile_9
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 104
+        width: 22
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 837a2289c9f277760800000000000000
+      internalID: 7455480057748956984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grinch-death-smile_10
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 107
+        width: 26
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e03a07d2bff3588c0800000000000000
+      internalID: -3997718746189749490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grinch-death-smile_11
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 105
+        width: 26
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e06504802acccc00800000000000000
+      internalID: 922334264706818278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grinch-death-smile_12
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 56
+        width: 24
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45eaf7fb3bc26eed0800000000000000
+      internalID: -2385169802122514860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grinch-death-smile_13
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 57
+        width: 26
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d6abea44062f8330800000000000000
+      internalID: 3715230017482630873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grinch-death-smile_14
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 58
+        width: 26
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f48242922a0552f0800000000000000
+      internalID: -984869799911586574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grinch-death-smile_15
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 58
+        width: 24
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11d7b0906f9233550800000000000000
+      internalID: 6139296853726559505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grinch-death-smile_16
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 59
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55cbf80aabff24860800000000000000
+      internalID: 7512848305430182997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grinch-death-smile_17
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 57
+        width: 24
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54ebe4ff0b0a8d800800000000000000
+      internalID: 637436029330964037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grinch-death-smile_18
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 57
+        width: 24
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2412328166fd80ee0800000000000000
+      internalID: -1294539263284403902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grinch-death-smile_19
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 56
+        width: 22
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf188375c525f0a20800000000000000
+      internalID: 3030731630797423099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grinch-death-smile_20
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 56
+        width: 22
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82dfe0d8489038150800000000000000
+      internalID: 5873548803928161576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grinch-death-smile_21
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 57
+        width: 22
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c88d34fd532278b0800000000000000
+      internalID: -5156019736949192504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grinch-death-smile_22
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 9
+        width: 22
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5704b624448da7a80800000000000000
+      internalID: -8468218361633095563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grinch-death-smile_23
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 11
+        width: 26
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53fbc6937f0285b70800000000000000
+      internalID: 8887890110808112949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grinch-death-smile_24
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 9
+        width: 27
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53a88813d26207390800000000000000
+      internalID: -7822710577196135883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grinch-death-smile_25
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 8
+        width: 29
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0ce8ad2d8964b880800000000000000
+      internalID: -8596129733666083826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grinch-death-smile_26
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 8
+        width: 30
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 285cb3c68dd317aa0800000000000000
+      internalID: -6165078415155411582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: fdf9af59dac23bd4da3a8aa9bed74035
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      grinch-death-smile_0: -8992788061241942345
+      grinch-death-smile_1: -5577981969431619629
+      grinch-death-smile_10: -3997718746189749490
+      grinch-death-smile_11: 922334264706818278
+      grinch-death-smile_12: -2385169802122514860
+      grinch-death-smile_13: 3715230017482630873
+      grinch-death-smile_14: -984869799911586574
+      grinch-death-smile_15: 6139296853726559505
+      grinch-death-smile_16: 7512848305430182997
+      grinch-death-smile_17: 637436029330964037
+      grinch-death-smile_18: -1294539263284403902
+      grinch-death-smile_19: 3030731630797423099
+      grinch-death-smile_2: -485906700684224854
+      grinch-death-smile_20: 5873548803928161576
+      grinch-death-smile_21: -5156019736949192504
+      grinch-death-smile_22: -8468218361633095563
+      grinch-death-smile_23: 8887890110808112949
+      grinch-death-smile_24: -7822710577196135883
+      grinch-death-smile_25: -8596129733666083826
+      grinch-death-smile_26: -6165078415155411582
+      grinch-death-smile_3: 9097652985237152351
+      grinch-death-smile_4: -5915200202789646397
+      grinch-death-smile_5: -7847446479759600740
+      grinch-death-smile_6: 4075026184920062178
+      grinch-death-smile_7: 3210255230068882752
+      grinch-death-smile_8: -7428752704747021845
+      grinch-death-smile_9: 7455480057748956984
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

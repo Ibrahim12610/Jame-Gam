@@ -5,7 +5,7 @@ using UnityEngine.Events;
 public class PlayerManager : MonoBehaviour
 {
     public static PlayerManager Instance;
-    
+    [SerializeField] private GameObject[] playerObjects;
     private ImpulseController _impulseController;
     private PlayerAttackController _playerAttackController;
     public PlayerMovement _playerMovement;
@@ -87,5 +87,18 @@ public class PlayerManager : MonoBehaviour
     public void HandleonKillSequence()
     {
         onKillSequence.Invoke();
+    }
+
+    public PlayerAnimator GetPlayerAnimator()
+    {
+        return _playerAnimator;
+    }
+
+    public void HandleDeathColliderLogic()
+    {
+        foreach (var objects in playerObjects)
+        {
+            objects.SetActive(false);
+        }
     }
 }

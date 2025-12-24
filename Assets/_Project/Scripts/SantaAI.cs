@@ -25,6 +25,8 @@ public class SantaAI : MonoBehaviour
     public float chanceToPatrolTask = .1f;
     public float chancePerSecondToObserve = .1f;
 
+    public bool hasKilledPlayer = false;
+
     [Header("Sight Settings")]
     [SerializeField] int rays;
     [SerializeField] float rayOffset;
@@ -55,7 +57,13 @@ public class SantaAI : MonoBehaviour
     }
     private void Update()
     {
-
+        if (hasKilledPlayer)
+        {
+            canSeePlayer = false;
+            animator.SetBool("canSeePlayer", false);
+            return;
+        }
+        
         // canSeePlayer = CanSeeLayer(LayerMask.NameToLayer("PlayerRaycast"));
         canSeePlayer = CanSeeLayer(playerLayer);
         animator.SetBool("canSeePlayer", canSeePlayer);
